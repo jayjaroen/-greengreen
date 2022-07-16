@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'moss': '#5A8F48',
+        'artichoke': '#C9D9B6',
       },
     },
 
