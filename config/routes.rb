@@ -5,13 +5,15 @@ Rails.application.routes.draw do
 
   root to: "pages#landing"
   get 'pages/home', to:'pages#home', as: 'home'
+  get 'users/:id/profile', to: 'users#profile', as: 'profile'
 
-
-  resources :users, only:[:show]
   resources :tips, only:[:index, :show]
-  resources :challenge_categories, only:[:index, :show] do
-    resources :challenges, only:[:index, :show]
+  resources :challenge_categories, only:[:index, :show]
+  resources :challenges, only:[:show] do
+    resources :user_challenges, only:[:create]
   end
-  resources :challenges, only:[:create]
+  resources :user_challenges, only:[:show] do
+    resources :user_challenge_records, only:[:show, :create]
+  end
 
 end
