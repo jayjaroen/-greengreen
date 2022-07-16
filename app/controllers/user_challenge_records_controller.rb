@@ -1,0 +1,2 @@
+class UserChallengeRecordsController < ApplicationController
+end
