@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  action: MyText
+  carbon_score: 1
+  point: 1
+  challenge_category: one
+
+two:
+  action: MyText
+  carbon_score: 1
+  point: 1
+  challenge_category: two
