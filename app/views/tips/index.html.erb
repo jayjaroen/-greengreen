@@ -1,0 +1,8 @@
+<h1>Tips & Tricks</h1>
+<% @tips.each do |tip| %>
+  <div>
+    <h5>Tips:<%= tip.name %></h5>
+    <h5>Description:<%= tip.description %></h5>
+    <%= link_to 'read more', tip_path(tip) %>
+  </div>
+<% end %>

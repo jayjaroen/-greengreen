@@ -1,0 +1,8 @@
+<h1>Challenge Categories</h1>
+<% @challenge_categories.each do |challenge_category| %>
+  <div>
+    <h5>Challenge:<%= challenge_category.name %></h5>
+    <h5>Description:<%= challenge_category.description %></h5>
+    <%= link_to 'read more', challenge_category_challenges_path(challenge_category,@challenges) %>
+  </div>
+<% end %>
