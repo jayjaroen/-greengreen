@@ -1,0 +1,35 @@
+<nav class="bg-moss flex text-white items-center justify-between flex-wrap p-3" >
+  <div>
+  <!---Logo/name of website-->
+    <span class="text-2xl ml-2 cursor-pointer font-bold text-white">
+      <%= link_to "Go green" %>
+    </span>
+  </div>
+  <!---Toggle button -->
+  <div class="block lg:hidden">
+    <button
+      onclick="toggle_nav()"
+      class="flex flex-col px-3">
+        <div class="w-6 h-1 bg-white rounded"></div>
+        <div class="w-6 h-1 bg-white my-1 rounded"></div>
+        <div class="w-6 h-1 bg-white rounded"></div>
+    </button>
+  </div>
+  <!--- nav menu -->
+  <div
+    class="w-full lg:w-auto block lg:flex lg:items-center lg:inline-block hidden"
+    id="navbar">
+
+    <div class="lg:flex-grow text-center">
+
+      <% if user_signed_in? %>
+          <%= link_to current_user.first_name.capitalize, user_path(current_user), class:"text-l lg:inline-block block mb-2 mr-1.5 hover:font-bold"%>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"text-l text-white hover:bg-green-600  bg-green-700 p-2 ml-1.5 rounded-2xl lg:inline-block block" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class:"text-l lg:inline-block block hover:text-green-700 mb-2" %>
+        <%= link_to "Register", new_user_registration_path, class:"text-l text-white hover:bg-green-600  bg-green-700 p-2 ml-1.5 rounded-2xl lg:inline-block block" %>
+      <% end %>
+
+    </div>
+  </div>
+</nav>

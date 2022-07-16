@@ -12,6 +12,17 @@
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
     <%= yield %>
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
   </body>
 </html>
+
+<script>
+  var navbar = document.getElementById("navbar")
+
+  const toggle_nav = () => {
+    navbar.classList.toggle("hidden")
+  }
+</script>
