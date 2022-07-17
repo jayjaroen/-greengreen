@@ -1,4 +1,4 @@
-<h1>List of all challenges</h1>
+<h1>Challenges for <%= @challenge_category.name %></h1>
   <% @challenges.each do |challenge| %>
     <div>
       <%= challenge.action %>
@@ -6,5 +6,7 @@
   <% end %>
 
 <hr>
-<p>only for admin user</p>
-<%= link_to 'create new challenge', new_challenge_path %>
+<% if policy(Challenge).create? %>
+  <p>only for admin user</p>
+  <%= link_to 'create new challenge', new_challenge_path %>
+<% end %>

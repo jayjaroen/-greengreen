@@ -16,10 +16,10 @@ class ChallengesController < ApplicationController
   end
 
   def create
-    # @challenge_category = ChallengeCategory.find(params[:challenge_category_id])
     @challenge = Challenge.new(challenge_params)
+    authorize @challenge
       if @challenge.save
-        render 'index'
+        redirect_to challenge_category_challenges_path(@challenge.challenge_category)
       end
   end
 

@@ -9,5 +9,7 @@
 
 <%# only allow admin user to create challenge category %>
 <hr>
-<p>Only allow for admin user to create</p>
-<%= link_to 'create challenge category',  new_challenge_category_path  %>
+<% if policy(ChallengeCategory).create? %>
+  <p>Only allow for admin user to create</p>
+  <%= link_to 'create challenge category',  new_challenge_category_path  %>
+<% end %>

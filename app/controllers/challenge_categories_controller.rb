@@ -16,8 +16,9 @@ before_action :find_challenge_category, only: :show
 
   def create
     @challenge_category = ChallengeCategory.new(challenge_category_params)
+    authorize @challenge_category
       if @challenge_category.save
-        redirect_to  challenge_categories_path
+        redirect_to challenge_categories_path
       end
   end
 

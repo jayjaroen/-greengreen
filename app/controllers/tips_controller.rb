@@ -17,6 +17,7 @@ before_action :find_tip, only: :show
 
   def create
     @tip = Tip.new(tip_params)
+    authorize @tip
     if @tip.save
       redirect_to tips_path
     end
