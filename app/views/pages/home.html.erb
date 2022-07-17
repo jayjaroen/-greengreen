@@ -1,5 +1,22 @@
 
-<h1>Hi This is Our Home Page!</h1>
-<%= link_to 'Tips', tips_path %>
-<%= link_to 'Challenges', challenge_categories_path %>
+<div class="bg-white flex flex-col grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:mx-16 lg:mx-16">
 
+
+  <%= link_to tips_path do%>
+    <div class="bg-artichoke rounded p-14 mx-6 h-56 mt-16 md:h-96 lg:h-96 md:mt-12 ">
+    <div>img</div>
+    <div class="text-moss text-3xl">Tips</div>
+    <div class="text-moss text-center">Learn more about our planet and how to be more eco-friendly</div>
+    </div>
+  <% end %>
+
+
+  <%= link_to challenge_categories_path do %>
+    <div class="bg-artichoke rounded p-14 mx-6 md:mt-12 md:h-96 lg:h-96">
+      <div>img</div>
+      <div class="text-moss text-3xl">Challenges</div>
+      <div class="text-moss text-center">Start saving the planet one habit at a time</div>
+   </div>
+  <% end %>
+
+</div>
