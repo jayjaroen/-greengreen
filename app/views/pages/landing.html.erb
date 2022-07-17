@@ -1,14 +1,22 @@
 <main class="bg-white flex flex-col">
-<div><h1 class="text-3xl text-moss text-center mt-12">Welcome to Go! green </h1></div>
-<div class="object-fit"><%= image_tag "landing.jpg" %></div>
- <!--- TODO: Typed:JS -->
-<div>
-  <%# <span data-controller="typed-js"></span> %>
-   <span id="banner-typed-text"></span>
-</div>
 
-  <!--- TODO: link to homepage -->
-  <div>
-  <%= link_to "Enter", home_path, class:"p-2 bg-green-500 rounded flex justify-end" %>
-  </div>
+  <div class="text-3xl text-moss text-center mt-16" >Welcome to Go! green</div>
+  <%# <div class="md:flex">
+   <div class="md:shrink-0"> %>
+      <%# <div class="object-fit h-48 w-96 justify-center"> %>
+        <%= image_tag "landing.jpg" %>
+      <%# </div> %>
+ <!--- TODO: Typed:JS -->
+      <%# <div>
+        <%# <span data-controller="typed-js"></span> %>
+        <%# <span id="banner-typed-text"></span>
+      </div> %>
+
+      <!--- TODO: link to homepage, why is this not under img? -->
+      <div >
+        <%= link_to "Enter", home_path, class:"p-2 bg-green-500 rounded flex align-center" %>
+      </div>
+
+    <%# </div>
+  </div> %>
 </main>
