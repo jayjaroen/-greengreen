@@ -1,0 +1,10 @@
+<div class=" bg-white p-10 rounded shadow-sm lg:w-96">
+    <h3 class="text-center text-2xl mb-4"> Create Challenge Categories </h3>
+      <p>only for admin user</p>
+      <%= simple_form_for (@challenge_category) do |f| %>
+      <%= f.input :name, placeholder:"Name",  label: false, class:"border py-2" %>
+      <%= f.input :description, placeholder:"Description",  label: false, input_html: { class: "new-form" } %>
+       <hr class="mb-2">
+      <%= f.submit "Create" , class:"bg-green-700 w-full mt-5 text-white py-2 mb-4 rounded hover:bg-green-600 transition-colors" %>
+    <% end %>
+  </div>

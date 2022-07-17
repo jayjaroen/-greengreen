@@ -1,0 +1,11 @@
+<div class=" bg-white p-10 rounded shadow-sm lg:w-96">
+    <h3 class="text-center text-2xl mb-4"> Create Challenge </h3>
+      <p>only for admin user</p>
+      <%= simple_form_for (@challenge) do |f| %>
+      <p>Action:<%= f.input :action, placeholder:"Action",  label: false, class:"border py-2" %></p>
+      <p>Carbon Saved:<%= f.input :carbon_score, placeholder:"Carbon saved (unit: gram CO2 emission)",  label: false, input_html: { class: "new-form" } %>in gram CO2 emission</p>
+      <p>Challenge Category:<%= f.association :challenge_category, placeholder:"challenge_category", prompt: "Please select", label: false %></p>
+       <hr class="mb-2">
+      <%= f.submit "Create" , class:"bg-green-700 w-full mt-5 text-white py-2 mb-4 rounded hover:bg-green-600 transition-colors" %>
+    <% end %>
+  </div>
