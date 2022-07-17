@@ -1,6 +1,6 @@
 <main class="bg-white h-screen flex flex-col">
-  <h2 class="text-center text-moss text-4xl mt-10 mb-8">Welcome back!</h2>
-  <div class="bg-artichoke rounded p-8 m-8" >
+  <h2 class="text-center text-moss text-4xl mt-10 mb-4">Welcome back!</h2>
+  <div class="bg-artichoke rounded p-8 m-8 md:mx-20 lg:mx-20" >
 
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -23,7 +23,7 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in",  class:"bg-moss w-full text-white py-2 mb-4 mt-3 rounded hover:bg-green-600 transition-colors" %>
+        <%= f.submit "Log in",  class:"bg-moss w-full text-white py-2 mb-4 mt-3 rounded hover:bg-darkmoss transition-colors" %>
       </div>
     <% end %>
 
