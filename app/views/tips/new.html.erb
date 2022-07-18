@@ -1,0 +1,11 @@
+<div class=" bg-white p-10 rounded shadow-sm lg:w-96">
+    <h3 class="text-center text-2xl mb-4"> Creating Tips </h3>
+      <p>only for admin user</p>
+      <%= simple_form_for (@tip) do |f| %>
+      <p>Name:<%= f.input :name, placeholder:"Name",  label: false, class:"border py-2" %></p>
+      <p>Description:<%= f.input :description, placeholder:"Description",  label: false, input_html: { class: "new-form" } %></p>
+      <p>Challenge category:<%= f.association :challenge_category, placeholder:"challenge_category", prompt: "Please select", label: false %>optional</p>
+       <hr class="mb-2">
+      <%= f.submit "Create" , class:"bg-green-700 w-full mt-5 text-white py-2 mb-4 rounded hover:bg-green-600 transition-colors" %>
+    <% end %>
+  </div>

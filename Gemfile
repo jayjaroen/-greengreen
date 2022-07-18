@@ -57,3 +57,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # devise
 gem 'devise'
+
+# simple form
+gem "simple_form", github: "heartcombo/simple_form"
+
+# pundit
+gem 'pundit'
