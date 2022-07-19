@@ -66,3 +66,6 @@ gem 'pundit'
 
 # env file
 gem 'dotenv-rails', groups: [:development, :test]
+
+# cloudinary
+gem 'cloudinary', '~> 1.16.0'

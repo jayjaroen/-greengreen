@@ -1,26 +1,22 @@
-<main class="bg-green-700 max-w-screen-xl mx-auto">
-  <h1 class="text-4xl text-white font-bold text-center pt-2">Edit Profile</h1>
+<main class="bg-white max-w-screen-xl mx-auto h-full">
+
+  <h1 class="text-2xl text-moss font-bold text-center pt-2">Edit Profile</h1>
     <div class="flex justify-center">
-      <div class="bg-green-700 p-2 rounded mt-2 mb-10">
+      <div class="bg-lightmoss p-8 rounded mt-2 mb-10">
+
         <%= simple_form_for (@user) do |f| %>
         <div><span class="text-white">E-mail</span>
           <%= f.input :email, class:"text-white", label:false, input_html: {
               class: "block w-full rounded-md bg-gray-50
               focus:border-green-700 focus:bg-white
               focus:ring-0 mt-1.5 mb-6 h-10"  } %></div>
-        <div><span class="text-white">First Name</span>
-          <%= f.input :first_name, label:false, input_html: {
-              class: "block w-full rounded-md bg-gray-50
-              focus:border-green-700 focus:bg-white
-              focus:ring-0 mt-1.5 mb-6  h-20"  } %></div>
-        <div><span class="text-white">Last Name</span>
-        <%= f.input :last_name, label:false, input_html: {
-              class: "block w-full rounded-md bg-gray-50
-              focus:border-green-700 focus:bg-white
-              focus:ring-0 mt-1.5 mb-6  h-20"  } %></div>
+
+              <%= f.input :photo, as: :file %>
+
         <%= f.submit "Update" , class:"bg-white w-full mt-3 text-green-700 text-bold py-2 mb-4 rounded hover:bg-green-50 transition-colors" %>
         <%= link_to "Back", profile_path(@user), class:"text-white mb-2" %>
         <% end %>
      </div>
   </div>
+
 </main>
