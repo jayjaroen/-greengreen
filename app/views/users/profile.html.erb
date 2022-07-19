@@ -1,5 +1,14 @@
 <h1>Welcome <%= current_user.first_name %></h1>
+
 <hr>
+
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, :width=>200, :height=>150, gravity: :face, class:"object-scale-down" %>
+  <% else %>
+    <%= image_tag "noprofilepic.jpg", width: 200, height: 150, class:"object-scale-down" %>
+  <% end %>
+
+<%= link_to 'edit your profile', edit_user_path(@user) %>
 
 <h3>Your challenges:</h3>
 <div>
@@ -9,3 +18,4 @@
 </div>
 
 <h3>Your Challenge for Today</h3>
+

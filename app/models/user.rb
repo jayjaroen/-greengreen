@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :user_challenges
   has_many :rankings
   has_many :challenges, through: :user_challenges
+  has_one_attached :photo
 
   def total_carbon_score
     total = Challenge.all.map do |challenge|
@@ -19,4 +20,5 @@ class User < ApplicationRecord
     # total = total.sum
     total = total.reject{|x| x.nil?}.sum
   end
+
 end

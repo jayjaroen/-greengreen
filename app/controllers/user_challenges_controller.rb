@@ -16,4 +16,5 @@ class UserChallengesController < ApplicationController
   def user_challenge_params
     params.require(:user_challenge).permit(:user_id, :challenge_id, :total_score)
   end
+
 end
