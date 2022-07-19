@@ -8,9 +8,16 @@
       <%# </div> %>
  <!--- TODO: Typed:JS -->
       <%# <div>
-        <%# <span data-controller="typed-js"></span> %>
-        <%# <span id="banner-typed-text"></span>
-      </div> %>
+        <span class="typed text-moss text-4xl"></span>
+      </div>
+
+      <script src="typed.js"></script>
+      <script>
+       var typed = new Typed('.element', {
+        strings: ["First sentence.", "Second sentence."],
+        typeSpeed: 30
+        });
+      </script> %>
 
       <!--- TODO: link to homepage, why is this not under img? -->
       <div >
