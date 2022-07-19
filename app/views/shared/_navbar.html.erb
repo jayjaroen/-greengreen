@@ -2,7 +2,7 @@
   <div>
   <!---Logo/name of website-->
     <span class="text-2xl ml-2 cursor-pointer font-bold text-white">
-      <%= link_to "Go green" %>
+      <%= link_to "Go green", home_path %>
     </span>
   </div>
   <!---Toggle button -->
@@ -23,7 +23,7 @@
     <div class="lg:flex-grow text-center">
 
       <% if user_signed_in? %>
-          <%= link_to current_user.first_name.capitalize, user_path(current_user), class:"text-l lg:inline-block block mb-2 mr-1.5 hover:font-bold"%>
+          <%= link_to current_user.first_name.capitalize, profile_path(current_user), class:"text-l lg:inline-block block mb-2 mr-1.5 hover:font-bold"%>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"text-l text-white hover:bg-green-600  bg-green-700 p-2 ml-1.5 rounded-2xl lg:inline-block block" %>
       <% else %>
         <%= link_to "Login", new_user_session_path, class:"text-l lg:inline-block block hover:text-green-700 mb-2" %>
