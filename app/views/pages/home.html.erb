@@ -1,22 +1,36 @@
 
-<div class="bg-white flex flex-col grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:mx-16 lg:mx-16">
+<main class="bg-lightsand h-full">
+  <div class="flex flex-col grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:px-16 lg:px-26">
 
 
-  <%= link_to tips_path do %>
-    <div class="bg-artichoke rounded p-14 mx-6 h-56 mt-16 md:h-96 lg:h-96 md:mt-12 ">
-    <%# <div><%= image_tag "2.jpg", class:"object-fit h-40 flex align-center" %></div> %>
-    <div class="text-moss text-3xl">Tips</div>
-    <div class="text-moss text-center">Learn more about our planet and how to be more eco-friendly</div>
-    </div>
-  <% end %>
+      <%= link_to tips_path do %>
+        <div class="bg-artichoke rounded p-12 mx-8 h-64 mt-12 md:mt-6 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss flex">
+        <%# background image %>
+          <div class="homeimage h-50 md:h-80 lg:h-86 mx-auto">
+          <%# # text and centering %>
+              <div class="text-lightsand text-center drop-shadow-lg justify-center">
+                <div class="text-2xl">T I P S</div>
+                <div class="text-l">Learn more about our planet and how to be more eco-friendly</div>
+              </div>
+            </div>
+        </div>
+      <% end %>
 
 
-  <%= link_to challenge_categories_path do %>
-    <div class="bg-artichoke rounded p-14 mx-6 md:mt-12 md:h-96 lg:h-96">
-      <div>img</div>
-      <div class="text-moss text-3xl">Challenges</div>
-      <div class="text-moss text-center">Start saving the planet one habit at a time</div>
-   </div>
-  <% end %>
 
-</div>
+      <%= link_to challenge_categories_path do %>
+        <div class="bg-artichoke rounded p-12 mx-8 h-64 mt-6 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss flex">
+        <%# bg-image %>
+          <div class="homeimage2 h-52 md:h-90 lg:h-80 mx-auto">
+          <%# card-info %>
+            <div class="text-lightsand text-center drop-shadow-lg hover:scale-110">
+              <div class="text-2xl">C H A L L E N G E S</div>
+              <div class="text-l">Start saving the planet one habit at a time</div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+
+
+</main>
