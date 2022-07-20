@@ -6,3 +6,9 @@
     <%= link_to 'read more', tip_path(tip) %>
   </div>
 <% end %>
+
+<hr>
+<% if policy(Tip).create? %>
+  <p>only for admin user</p>
+  <%= link_to 'create new tips & tricks', new_tip_path %>
+<% end %>

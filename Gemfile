@@ -58,5 +58,19 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # devise
 gem 'devise'
 
+
 #font awesome
 gem "font-awesome-sass", "~> 5.15"
+
+# simple form
+gem "simple_form", github: "heartcombo/simple_form"
+
+# pundit
+gem 'pundit'
+
+# env file
+gem 'dotenv-rails', groups: [:development, :test]
+
+# cloudinary
+gem 'cloudinary', '~> 1.16.0'
+

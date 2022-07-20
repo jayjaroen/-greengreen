@@ -6,3 +6,10 @@
     <%= link_to 'read more', challenge_category_challenges_path(challenge_category,@challenges) %>
   </div>
 <% end %>
+
+<%# only allow admin user to create challenge category %>
+<hr>
+<% if policy(ChallengeCategory).create? %>
+  <p>Only allow for admin user to create</p>
+  <%= link_to 'create challenge category',  new_challenge_category_path  %>
+<% end %>
