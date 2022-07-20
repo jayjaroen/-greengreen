@@ -1,21 +1,31 @@
-<h1>Welcome <%= current_user.first_name %></h1>
+<main class="bg-lightsand h-screen">
 
-<hr>
+<%# Profile card - picture name and carbon emmissions saved %>
+  <div class="flex flex-start pt-6 ml-8">
 
-  <% if @user.photo.attached? %>
-    <%= cl_image_tag @user.photo.key, :width=>200, :height=>150, gravity: :face, class:"object-scale-down" %>
-  <% else %>
-    <%= image_tag "noprofilepic.jpg", width: 200, height: 150, class:"object-scale-down" %>
-  <% end %>
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, :width=>100, :height=>100, gravity: :face, class:"object-scale-down", :gravity=>"face", :radius=>"max", :crop=>"fill" %>
+      <% else %>
+        <%= image_tag "noprofilepic.jpg", width: 100, height: 100, class:"object-scale-down", :radius=>"max", :crop=>"fill" %>
+      <% end %>
 
-<%= link_to 'edit your profile', edit_user_path(@user) %>
+      <h1 class="text-moss text-2xl ml-4"> Hello <%= current_user.first_name.capitalize  %></h1>
+      <div><%= link_to edit_user_path(@user) do %> <i class="fas fa-edit text-moss text-2xl"></i> <% end %></div>
+    </div>
 
-<h3>Your challenges:</h3>
-<div>
-  <% @challenges.each do |challenge| %>
-    <ol><%= challenge.action %></ol>
-  <% end %>
-</div>
 
-<h3>Your Challenge for Today</h3>
 
+
+
+  <%# <%= link_to 'edit your profile', edit_user_path(@user) %>
+<%# Challenges cards %>
+  <h3 class="bg-artichoke rounded text-white text-2xl text-center mt-4 mx-4 p-2"> C H A L L E N G E S</h3>
+  <div class="text-lightmoss text-xl">
+    <% @challenges.each do |challenge| %>
+      <ol><%= challenge.action %></ol>
+    <% end %>
+  </div>
+
+  <h3 class="bg-artichoke rounded text-white text-2xl text-center mt-2 mx-4 p-2" >Your Challenge for Today</h3>
+
+</main>
