@@ -1,3 +1,23 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// .img-show {
+//   object-fit: contain;
+//   padding:0;
+//   margin:0;
+//   border-radius: 5px;
+//   height: 60%;
+// }
+
+.homeimage {
+  background-image: asset-url('home1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.homeimage2 {
+  background-image: asset-url('home2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}

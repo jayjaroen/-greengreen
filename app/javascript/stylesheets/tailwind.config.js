@@ -8,6 +8,7 @@ module.exports = {
         'lightmoss': '#80B26F',
         'darkmoss': '#2D5C1D',
         'artichoke': '#C9D9B6',
+        'lightsand': '#FEFBF6',
       },
     },
 
