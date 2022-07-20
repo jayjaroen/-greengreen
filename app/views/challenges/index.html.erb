@@ -2,8 +2,15 @@
   <% @challenges.each do |challenge| %>
     <div>
       <%= challenge.action %>
+      <%#= button_to "Join the challenge",challenge_user_challenges_path(challenge)%>
+      <%= form_with model: UserChallenge.new, url: challenge_user_challenges_path(challenge) do |f| %>
+        <%= f.hidden_field :challenge_id, value: challenge.id %>
+        <%= f.submit 'Join the Challenge' %>
+      <% end %>
     </div>
   <% end %>
+
+
 
 <hr>
 <% if policy(Challenge).create? %>
