@@ -6,12 +6,13 @@
       <% if @user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, :width=>100, :height=>100, gravity: :face, class:"object-scale-down", :gravity=>"face", :radius=>"max", :crop=>"fill" %>
       <% else %>
-        <%= image_tag "noprofilepic.jpg", width: 100, height: 100, class:"object-scale-down", :radius=>"max", :crop=>"fill" %>
+        <%= image_tag "noprofilepic.jpg", width: 100, height: 100, class:"object-scale-down rounded-full" %>
       <% end %>
-
-      <h1 class="text-moss text-2xl ml-4"> Hello <%= current_user.first_name.capitalize  %></h1>
-      <div><%= link_to edit_user_path(@user) do %> <i class="fas fa-edit text-moss text-2xl"></i> <% end %></div>
-    </div>
+    <p>
+      <h1 class="text-moss text-3xl ml-4"> Hello <%= current_user.first_name.capitalize  %></h1>
+      <%= link_to edit_user_path(@user) do %> <i class="fas fa-user-edit text-moss hover:text-lightmoss text-2xl ml-4 pt-2"></i> <% end %>
+    </p>
+  </div>
 
 
 
@@ -25,7 +26,7 @@
       <ol><%= challenge.action %></ol>
     <% end %>
   </div>
-
+<%# Challenges cards %>
   <h3 class="bg-artichoke rounded text-white text-2xl text-center mt-2 mx-4 p-2" >Your Challenge for Today</h3>
-
+<div><i class="fas fa-calendar-edit text-green-700"></i></div>
 </main>
