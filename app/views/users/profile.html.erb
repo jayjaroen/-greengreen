@@ -12,10 +12,21 @@
 
 <h3>Your challenges:</h3>
 <div>
-  <% @challenges.each do |challenge| %>
-    <ol><%= challenge.action %></ol>
+  <% @user_challenges.each do |user_challenge| %>
+    <ol>
+      <%= link_to user_challenge.challenge.action, user_challenge_path(user_challenge) %>
+      <% if current_user.user_challenge_records.where(user_challenge: user_challenge, date: Time.current.in_time_zone('Beijing').to_date).present? %>
+        <p>DONE</p>
+      <% else %>
+
+        <%= form_with model: UserChallengeRecord.new, url: user_challenge_user_challenge_records_path(user_challenge) do |f| %>
+          <%= f.hidden_field :user_challenge_id, value: user_challenge.id %>
+          <%= f.hidden_field :date, value: Time.current.in_time_zone('Beijing').to_date %>
+          <%= f.submit 'Complete this Challenge for today' %>
+        <% end %>
+      <% end %>
+    </ol>
   <% end %>
 </div>
 
-<h3>Your Challenge for Today</h3>
-
+<h3>The Challenge that you have done for Today</h3>

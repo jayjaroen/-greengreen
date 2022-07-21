@@ -4,6 +4,7 @@ before_action :find_user, only: [:edit, :update]
   def profile
     @user = current_user
     @challenges = @user.challenges
+    @user_challenges = @user.user_challenges
     authorize @user
   end
 
