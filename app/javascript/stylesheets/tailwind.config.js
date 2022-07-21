@@ -15,11 +15,15 @@ module.exports = {
         'artichoke': '#C9D9B6',
         'lightsand': '#FEFBF6',
       },
+
     },
 
   },
   variants: {
-    extend: {},
+    extend: {
+      fontWeight: ['hover', 'focus'],
+
+    },
   },
   plugins: [],
 

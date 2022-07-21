@@ -1,11 +1,6 @@
-<main class="bg-white flex flex-col textl-4l text-moss">
-
-  <div class="text-3xl text-moss text-center mt-16 font-oswald" >WELCOME</div>
-  <div class="text-3xl text-moss text-center mt-16 font-barlow" >WELCOME</div>
-
-\
-  <%# <div class="md:flex">
-   <div class="md:shrink-0"> %>
+<main class="bg-artichoke flex justify-center textl-4l text-moss h-screen flex-col">
+<div class="md:flex md:items-center md:justify-center md:flex-col">
+<h1 class="font-oswald text-6xl text-white ml-6 lg:text-12xl"> Re - <span class="mov"> </span></h1>
 
       <%# <div class="object-fit h-48 w-96 justify-center"> %>
         <%# <%= image_tag "landing.jpg" %>
@@ -15,11 +10,12 @@
         <span data-controller="typed-js"></span>
       </div> %>
 
-      <!--- TODO: link to homepage, why is this not under img? -->
+
       <div >
-        <%= link_to "Enter", home_path, class:"p-2 bg-green-500 rounded flex align-center" %>
+        <%= link_to "Enter", home_path, class:" rounded flex text-moss text-2xl font-barlow align-center mt-6 ml-6 hover:font-bold md:text-2xl md:mt-10" %>
       </div>
 
-    <%# </div>
-  </div> %>
+      </div>
+
+
 </main>
