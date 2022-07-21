@@ -1,15 +1,20 @@
-<h1>Challenge Categories</h1>
-<% @challenge_categories.each do |challenge_category| %>
-  <div>
-    <h5>Challenge:<%= challenge_category.name %></h5>
-    <h5>Description:<%= challenge_category.description %></h5>
-    <%= link_to 'read more', challenge_category_challenges_path(challenge_category,@challenges) %>
-  </div>
-<% end %>
+<main class="bg-lightsand h-screen">
 
-<%# only allow admin user to create challenge category %>
-<hr>
-<% if policy(ChallengeCategory).create? %>
-  <p>Only allow for admin user to create</p>
-  <%= link_to 'create challenge category',  new_challenge_category_path  %>
-<% end %>
+  <h1>Challenge Categories</h1>
+
+  <% @challenge_categories.each do |challenge_category| %>
+    <div class="bg-artichoke ">
+    img
+      <h5>Challenge:<%= challenge_category.name %></h5>
+      <h5>Description:<%= challenge_category.description %></h5>
+      <%= link_to 'read more', challenge_category_challenges_path(challenge_category,@challenges) %>
+    </div>
+  <% end %>
+
+  <%# only allow admin user to create challenge category %>
+  <hr>
+  <% if policy(ChallengeCategory).create? %>
+    <p>Only allow for admin user to create</p>
+    <%= link_to 'create challenge category',  new_challenge_category_path  %>
+  <% end %>
+</main>
