@@ -1,29 +1,21 @@
-<main class="bg-white flex flex-col">
+<main class="bg-artichoke flex justify-center textl-4l text-moss h-screen flex-col">
+<div class="md:flex md:items-center md:justify-center md:flex-col">
+<h1 class="font-oswald text-6xl text-white ml-6 lg:text-12xl"> Re - <span class="mov"> </span></h1>
 
-  <div class="text-3xl text-moss text-center mt-16" >Welcome to Go! green</div>
-  <%# <div class="md:flex">
-   <div class="md:shrink-0"> %>
       <%# <div class="object-fit h-48 w-96 justify-center"> %>
-        <%= image_tag "landing.jpg" %>
+        <%# <%= image_tag "landing.jpg" %>
       <%# </div> %>
  <!--- TODO: Typed:JS -->
       <%# <div>
-        <span class="typed text-moss text-4xl"></span>
-      </div>
+        <span data-controller="typed-js"></span>
+      </div> %>
 
-      <script src="typed.js"></script>
-      <script>
-       var typed = new Typed('.element', {
-        strings: ["First sentence.", "Second sentence."],
-        typeSpeed: 30
-        });
-      </script> %>
 
-      <!--- TODO: link to homepage, why is this not under img? -->
       <div >
-        <%= link_to "Enter", home_path, class:"p-2 bg-green-500 rounded flex align-center" %>
+        <%= link_to "Enter", home_path, class:" rounded flex text-moss text-2xl font-barlow align-center mt-6 ml-6 hover:font-bold md:text-2xl md:mt-10" %>
       </div>
 
-    <%# </div>
-  </div> %>
+      </div>
+
+
 </main>

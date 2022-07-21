@@ -1,14 +1,20 @@
-<h1>Welcome <%= current_user.first_name %></h1>
+<main class="bg-lightsand h-screen">
 
-<hr>
+<%# Profile card - picture name and carbon emmissions saved %>
+  <div class="flex flex-start pt-6 ml-8">
 
-  <% if @user.photo.attached? %>
-    <%= cl_image_tag @user.photo.key, :width=>200, :height=>150, gravity: :face, class:"object-scale-down" %>
-  <% else %>
-    <%= image_tag "noprofilepic.jpg", width: 200, height: 150, class:"object-scale-down" %>
-  <% end %>
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, :width=>100, :height=>100, gravity: :face, class:"object-scale-down", :gravity=>"face", :radius=>"max", :crop=>"fill" %>
+      <% else %>
+        <%= image_tag "noprofilepic.jpg", width: 100, height: 100, class:"object-scale-down rounded-full" %>
+      <% end %>
+    <p>
+      <h1 class="text-moss text-3xl ml-4"> Hello <%= current_user.first_name.capitalize  %></h1>
+      <%= link_to edit_user_path(@user) do %> <i class="fas fa-user-edit text-moss hover:text-lightmoss text-2xl ml-4 pt-2"></i> <% end %>
+    </p>
+  </div>
 
-<%= link_to 'edit your profile', edit_user_path(@user) %>
+
 
 <h3>Your challenges:</h3>
 <div>
@@ -29,4 +35,3 @@
   <% end %>
 </div>
 
-<h3>The Challenge that you have done for Today</h3>

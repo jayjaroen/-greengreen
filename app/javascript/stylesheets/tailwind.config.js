@@ -3,6 +3,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        barlow: "'Barlow Semi Condensed', sans-serif",
+        oswald: "'Oswald', sans-serif",
+      },
+
       colors: {
         'moss': '#5A8F48',
         'lightmoss': '#80B26F',
@@ -10,11 +15,15 @@ module.exports = {
         'artichoke': '#C9D9B6',
         'lightsand': '#FEFBF6',
       },
+
     },
 
   },
   variants: {
-    extend: {},
+    extend: {
+      fontWeight: ['hover', 'focus'],
+
+    },
   },
   plugins: [],
 
