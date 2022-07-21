@@ -16,7 +16,6 @@ module.exports = {
         'lightsand': '#FEFBF6',
       },
 
-
     },
 
   },
