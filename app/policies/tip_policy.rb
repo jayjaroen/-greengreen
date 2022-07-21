@@ -15,7 +15,9 @@ class TipPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin == true
+    if user != nil # the user is signed in
+      user.admin == true
+    end
   end
 
 end

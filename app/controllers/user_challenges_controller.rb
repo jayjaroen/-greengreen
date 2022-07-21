@@ -1,4 +1,8 @@
 class UserChallengesController < ApplicationController
+  before_action :find_user_challenge, only: :show
+  def show
+    authorize @user_challenge
+  end
 
   def new
   end
@@ -17,4 +21,7 @@ class UserChallengesController < ApplicationController
     params.require(:user_challenge).permit(:user_id, :challenge_id, :total_score)
   end
 
+  def find_user_challenge
+    @user_challenge = UserChallenge.find(params[:id])
+  end
 end

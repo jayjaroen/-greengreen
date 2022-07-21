@@ -16,17 +16,22 @@
 
 
 
+<h3>Your challenges:</h3>
+<div>
+  <% @user_challenges.each do |user_challenge| %>
+    <ol>
+      <%= link_to user_challenge.challenge.action, user_challenge_path(user_challenge) %>
+      <% if current_user.user_challenge_records.where(user_challenge: user_challenge, date: Time.current.in_time_zone('Beijing').to_date).present? %>
+        <p>DONE</p>
+      <% else %>
 
+        <%= form_with model: UserChallengeRecord.new, url: user_challenge_user_challenge_records_path(user_challenge) do |f| %>
+          <%= f.hidden_field :user_challenge_id, value: user_challenge.id %>
+          <%= f.hidden_field :date, value: Time.current.in_time_zone('Beijing').to_date %>
+          <%= f.submit 'Complete this Challenge for today' %>
+        <% end %>
+      <% end %>
+    </ol>
+  <% end %>
+</div>
 
-  <%# <%= link_to 'edit your profile', edit_user_path(@user) %>
-<%# Challenges cards %>
-  <h3 class="bg-artichoke rounded text-white text-2xl text-center mt-4 mx-4 p-2"> C H A L L E N G E S</h3>
-  <div class="text-lightmoss text-xl">
-    <% @challenges.each do |challenge| %>
-      <ol><%= challenge.action %></ol>
-    <% end %>
-  </div>
-<%# Challenges cards %>
-  <h3 class="bg-artichoke rounded text-white text-2xl text-center mt-2 mx-4 p-2" >Your Challenge for Today</h3>
-<div><i class="fas fa-calendar-edit text-green-700"></i></div>
-</main>
