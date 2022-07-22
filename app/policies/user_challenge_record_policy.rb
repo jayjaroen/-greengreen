@@ -1,4 +1,4 @@
-class UserChallengePolicy < ApplicationPolicy
+class UserChallengeRecordPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     # def resolve
@@ -10,7 +10,4 @@ class UserChallengePolicy < ApplicationPolicy
     true
   end
 
-  def show?
-    true
-  end
 end

@@ -11,6 +11,8 @@ class ChallengePolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin == true
+    if user != nil
+      user.admin == true
+    end
   end
 end

@@ -1,24 +1,24 @@
 <main class="bg-lightsand h-screen">
-  <h1 class="text-moss text-center text-4xl font-oswald py-4">Tips & Tricks</h1>
 
-  <div class="grid grid-cols-2 h-25">
-
-    <% @tips.each do |tip| %>
-      <div class="bg-artichoke p-3 m-2 text-moss rounded">
-        <div class="flex flex-col">
-          <i class="fa-solid fa-earth-asia text-moss"></i> <h2 class="text-center"><%= tip.name %></h2>
-        <%# <div><h5>Description:<%= tip.description %>
-          <%= link_to 'read more', tip_path(tip) %>
-
-      </div>
-
+  <h1 class="text-moss text-4xl pt-4 pb-6 font-oswald text-center">Tips & Tricks</h1>
+    <div class="grid grid-cols-2 mx-4 gap-2">
+        <% @tips.each do |tip| %>
+          <div class="bg-artichoke p-2 h-24 rounded shadow-lg">
+            <%= link_to tip_path(tip)  do %>
+              <div class="text-moss font-oswald text-center pt-5">
+              <div class="flex flex-col">
+                <i class="fab fa-pagelines text-moss text-3xl pb-1.5"></i>
+                <div class="font-oswald"><%= tip.name %></h5></div></div>
+              </div>
+          <%# <h5>Description:<%= tip.description %></h5>
+            <% end %>
+          </div>
+          <% end %>
     </div>
-   <% end %>
-  </div>
 
+  <% if policy(Tip).create? %>
+    <p>only for admin user</p>
+    <%= link_to 'create new tips & tricks', new_tip_path %>
+  <% end %>
 
-<% if policy(Tip).create? %>
-  <p>only for admin user</p>
-  <%= link_to 'create new tips & tricks', new_tip_path %>
-<% end %>
 </main>
