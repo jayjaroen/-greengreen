@@ -2,7 +2,7 @@
   <h1 class="text-moss text-4xl pt-4 pb-6 font-oswald text-center">Tips & Tricks</h1>
     <div class="grid grid-cols-2 mx-4 gap-2">
         <% @tips.each do |tip| %>
-          <div class="bg-artichoke p-2 h-24 rounded shadow-lg">
+          <div class="bg-artichoke p-3 h-24 rounded shadow-lg">
             <%= link_to tip_path(tip)  do %>
               <div class="text-moss font-oswald text-center pt-5">
               <div class="flex flex-col">

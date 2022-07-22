@@ -1,19 +1,30 @@
-<h1>Challenges for <%= @challenge_category.name %></h1>
-  <% @challenges.each do |challenge| %>
-    <div>
-      <%= challenge.action %>
-      <%#= button_to "Join the challenge",challenge_user_challenges_path(challenge)%>
-      <%= form_with model: UserChallenge.new, url: challenge_user_challenges_path(challenge) do |f| %>
-        <%= f.hidden_field :challenge_id, value: challenge.id %>
-        <%= f.submit 'Join the Challenge' %>
-      <% end %>
-    </div>
+<main class="bg-lightsand h-screen">
+<div class="flex justify-center">
+  <%= link_to challenge_categories_path do %> <i class="fas fa-long-arrow-alt-left text-moss pt-8 text-2xl pr-4 "></i> <% end %>
+    <h1 class="font-oswald text-3xl text-center py-6 text-moss"><%= @challenge_category.name.upcase %></h1>
+</div>
+    <% @challenges.each do |challenge| %>
+      <div>
+        <div class="font-barlow text-2xl bg-artichoke text-center rounded mx-4 p-2 mb-4 mt-4"> <%= challenge.action %>
+          <%#= button_to "Join the challenge",challenge_user_challenges_path(challenge)%>
+          <div class="text-moss"></div><%= form_with model: UserChallenge.new, url: challenge_user_challenges_path(challenge) do |f| %>
+            <%= f.hidden_field :challenge_id, value: challenge.id %>
+            <%# font awesome : add to challenges button %>
+            <%#= f.submit 'Join the Challenge' %>
+              <%= f.button :submit do %>
+                  <i class="fab fa-envira text-moss"></i>
+              <% end %>
+            <% end %>
+         </div>
+        </div>
+      </div>
+    <% end %>
+
+
+
+
+  <% if policy(Challenge).create? %>
+    <p>only for admin user</p>
+    <%= link_to 'create new challenge', new_challenge_path %>
   <% end %>
-
-
-
-<hr>
-<% if policy(Challenge).create? %>
-  <p>only for admin user</p>
-  <%= link_to 'create new challenge', new_challenge_path %>
-<% end %>
+</main>
