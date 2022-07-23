@@ -30,7 +30,7 @@ before_action :find_tip, only: :show
   end
 
   def tip_params
-    params.require(:tip).permit(:name, :description, :challenge_category_id)
+    params.require(:tip).permit(:name, :description, :challenge_category_id, :photo)
   end
 
 end

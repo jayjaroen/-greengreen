@@ -1,1 +1,11 @@
-<h1><%= @tip.name %></h1>
+<main class="bg-lightsand h-screen">
+
+  <div class="font-oswald text-2xl text-center text-moss py-4 flex justify-center">
+    <%= link_to tips_path do %> <i class="fas fa-long-arrow-alt-left font-moss p-2 pt-2 text-2xl pl-2"></i> <% end %>
+    <h1 class="font-oswald text-2xl pl-3 "> <%= @tip.name.upcase %></h1>
+  </div>
+
+  <div class="text-center text-moss">img</div>
+  <div class="font-barlow text-moss bg-artichoke p-2 rounded mx-4 mt-4 h-40 text-xl text-center px-4"> <%= @tip.description.capitalize %></div>
+
+</main>
