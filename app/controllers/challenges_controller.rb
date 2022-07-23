@@ -29,6 +29,6 @@ class ChallengesController < ApplicationController
   end
 
   def challenge_params
-    params.require(:challenge).permit(:action, :carbon_score, :point, :challenge_category_id)
+    params.require(:challenge).permit(:action, :carbon_score, :point, :challenge_category_id, :photo)
   end
 end
