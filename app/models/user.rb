@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :user_challenges
   has_many :user_challenge_records, through: :user_challenges
-  has_many :rankings
+  has_many :rankingsS
   has_many :challenges, through: :user_challenges
   has_one_attached :photo
 
