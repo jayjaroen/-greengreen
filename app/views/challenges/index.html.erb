@@ -1,23 +1,31 @@
 <main class="bg-lightsand h-screen">
-<div class="flex justify-center">
-  <%= link_to challenge_categories_path do %> <i class="fas fa-long-arrow-alt-left text-moss pt-8 text-2xl pr-4 "></i> <% end %>
-    <h1 class="font-oswald text-3xl text-center py-6 text-moss"><%= @challenge_category.name.upcase %></h1>
-</div>
+
+  <div class="flex justify-center">
+    <%= link_to challenge_categories_path do %> <i class="fas fa-long-arrow-alt-left text-moss pt-8 text-2xl pr-4 "></i> <% end %>
+      <h1 class="font-oswald text-3xl text-center py-6 text-moss"><%= @challenge_category.name.upcase %></h1>
+  </div>
+
+
     <% @challenges.each do |challenge| %>
-      <div>
-        <div class="font-barlow text-2xl bg-artichoke text-center rounded mx-4 p-2 mb-4 mt-4"> <%= challenge.action %>
+      <div class="flex flex-row justify-center bg-artichoke rounded mx-4 p-2 mb-6 mt-4">
+        <div class="font-barlow text-2xl text-center"> <%= challenge.action %></div>
           <%#= button_to "Join the challenge",challenge_user_challenges_path(challenge)%>
-          <div class="text-moss"></div><%= form_with model: UserChallenge.new, url: challenge_user_challenges_path(challenge) do |f| %>
+
+            <%= form_with model: UserChallenge.new, url: challenge_user_challenges_path(challenge) do |f| %>
             <%= f.hidden_field :challenge_id, value: challenge.id %>
             <%# font awesome : add to challenges button %>
             <%#= f.submit 'Join the Challenge' %>
+
+            <div>
               <%= f.button :submit do %>
-                  <i class="fas fa-plus text-moss"></i>
+                  <i class="fas fa-plus text-moss mt-2 text-xl ml-4"></i>
               <% end %>
-            <% end %>
-         </div>
+            </div>
         </div>
-      </div>
+            <% end %>
+
+         </div>
+
     <% end %>
 
 
@@ -27,4 +35,5 @@
     <p>only for admin user</p>
     <%= link_to 'create new challenge', new_challenge_path %>
   <% end %>
+
 </main>
