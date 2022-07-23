@@ -1,3 +1,4 @@
+
 <main class="bg-whitesand h-screen">
   <h1 class="font-oswald text-3xl text-moss text-center my-4">Challenge Categories</h1>
   <% @challenge_categories.each do |challenge_category| %>
@@ -12,6 +13,8 @@
     <% end %>
   </div>
   <%# only allow admin user to create challenge category %>
+
+
 
   <% if policy(ChallengeCategory).create? %>
     <p>Only allow for admin user to create</p>
