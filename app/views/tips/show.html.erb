@@ -7,5 +7,7 @@
 
   <div class="text-center text-moss">img</div>
   <div class="font-barlow text-moss bg-artichoke p-2 rounded mx-4 mt-4 h-40 text-xl text-center px-4"> <%= @tip.description.capitalize %></div>
-
+  <div>
+    <%= link_to 'take the challenge', challenge_category_challenges_path(@tip.challenge_category)%>
+  </div>
 </main>
