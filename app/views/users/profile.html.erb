@@ -9,29 +9,47 @@
         <%= image_tag "noprofilepic.jpg", width: 100, height: 100, class:"object-scale-down rounded-full" %>
       <% end %>
     <p>
-      <h1 class="text-moss text-3xl ml-4"> Hello <%= current_user.first_name.capitalize  %></h1>
-      <%= link_to edit_user_path(@user) do %> <i class="fas fa-user-edit text-moss hover:text-lightmoss text-2xl ml-4 pt-2"></i> <% end %>
+      <h1 class="text-moss text-4xl ml-4 font-oswald pt-4"> Hello <%= current_user.first_name.capitalize  %></h1>
+      <%= link_to edit_user_path(@user) do %> <i class="fas fa-user-edit text-moss hover:text-lightmoss text-2xl ml-4 pt-6"></i> <% end %>
     </p>
   </div>
 
+  <div class="bg-artichoke p-4 mx-4 rounded mt-4">
+    <div class="text-moss font-barlow text-2xl">You have saved <%= @user.total_carbon_score  %>  g C02E since  <%= @user.created_at.strftime("%Y-%m-%d") %> </div>
+  </div>
 
 
-<h3>Your challenges:</h3>
-<div>
-  <% @user_challenges.each do |user_challenge| %>
-    <ol>
-      <%= link_to user_challenge.challenge.action, user_challenge_path(user_challenge) %>
-      <% if current_user.user_challenge_records.where(user_challenge: user_challenge, date: Time.current.in_time_zone('Beijing').to_date).present? %>
-        <p>DONE</p>
-      <% else %>
+<div class="bg-artichoke p-6 mx-4 rounded mt-2 font-barlow text-xl">
+  <%#  Challenges heading %>
+  <div class="flex flex-row">
+    <h3 class="font-oswald text-3xl text-moss mb-4">Your challenges</h3>
+    <i class="fab fa-pagelines text-moss text-3xl ml-2 mt-1"></i>
+  </div>
+ <%# User challenges %>
 
-        <%= form_with model: UserChallengeRecord.new, url: user_challenge_user_challenge_records_path(user_challenge) do |f| %>
-          <%= f.hidden_field :user_challenge_id, value: user_challenge.id %>
-          <%= f.hidden_field :date, value: Time.current.in_time_zone('Beijing').to_date %>
-          <%= f.submit 'Complete this Challenge for today' %>
+  <div>
+    <% @user_challenges.each do |user_challenge| %>
+      <ol>
+      <div class="flex flex-row">
+        <%= link_to user_challenge.challenge.action, user_challenge_path(user_challenge) %>
+          <% if current_user.user_challenge_records.where(user_challenge: user_challenge, date: Time.current.in_time_zone('Beijing').to_date).present? %>
+            <div><i class="fab fa-envira text-lightmoss ml-2"></i> </div>
+          </div>
+
+        <% else %>
+
+          <%= form_with model: UserChallengeRecord.new, url: user_challenge_user_challenge_records_path(user_challenge) do |f| %>
+            <%= f.hidden_field :user_challenge_id, value: user_challenge.id %>
+            <%= f.hidden_field :date, value: Time.current.in_time_zone('Beijing').to_date %>
+            <%# <%= f.submit 'Complete this Challenge for today' %>
+             <%= f.button :submit do %>
+                  <i class="fas fa-check text-moss text-2xl ml-2"></i>
+              <% end %>
+          <% end %>
         <% end %>
-      <% end %>
-    </ol>
-  <% end %>
-</div>
-
+      </ol>
+    <% end %>
+     </div>
+    </div>
+  </div>
+</main>

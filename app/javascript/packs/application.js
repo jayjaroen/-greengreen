@@ -15,6 +15,11 @@ require("channels")
 
 import "stylesheets/application"
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+// Rails.start()
+// Turbolinks.start()
+// ActiveStorage.start()
+import { toggleNavbar } from '../scripts/toggle-navbar'
+
+document.addEventListener("turbolinks:load", () =>{
+  toggleNavbar()
+})
