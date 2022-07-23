@@ -7,6 +7,7 @@ before_action :find_challenge_category, only: :show
   end
 
   def show
+
   end
 
   def new
