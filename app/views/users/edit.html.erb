@@ -2,21 +2,37 @@
 
   <h1 class="text-3xl text-moss font-oswald font-bold text-center py-6">Edit Profile</h1>
     <div class="flex justify-center">
-      <div class="bg-artichoke p-8 rounded mt-2 mb-10 mx-6">
+      <div class="bg-artichoke p-12 rounded mt-2 mb-10 mx-6">
 
         <%= simple_form_for (@user) do |f| %>
-        <div><span class="text-moss font-barlow text-xl">E-mail</span>
+        <div><span class="text-moss font-barlow text-xl mb-1">E-mail</span>
           <%= f.input :email, class:"text-white", label:false, input_html: {
               class: "block w-full rounded-md bg-gray-50
               focus:border-moss focus:bg-white
-              focus:ring-0 mt-1.5 mb-6 h-10 pl-2"  } %></div>
-
-              <%= f.input :photo, as: :file, class:"text-moss font-barlow text-xl" %>
-
-        <%= f.submit "Update" , class:"bg-white w-full mt-3 text-moss text-bold py-2 mb-4 rounded hover:bg-moss hover:text-white transition-colors" %>
-        <%= link_to "Back", profile_path(@user), class:"text-white mb-2 hover:text-moss transition-colors" %>
+              focus:ring-0 mt-1.5 mb-2 h-10 pl-2 text-gray-500 font-barlow"  } %></div>
+              <%# <%= f.label :photo %>
+              <%= f.input :photo, as: :file, label_html: { class: 'photouploadlabel font-barlow text-xl text-moss mb-1.5' }, input_html: {class:'photouploadfile text-barlow text-moss hidden'}%>
+              <div class="photoupload text-moss font-barlow text-xl text-moss p-2 rounded bg-gray-50">Upload photo</div>
+              <span class="fileupload text-gray-700 font-barlow text-l"> No file chosen
+               </span>
+        <%= f.submit "Update" , class:"bg-white w-full mt-3 text-moss text-bold py-2 mb-4 rounded hover:bg-moss hover:text-white transition-colors font-barlow" %>
+        <%= link_to "Back", profile_path(@user), class:"text-white mb-2 hover:text-moss transition-colors font-barlow text-xl" %>
         <% end %>
      </div>
   </div>
 
 </main>
+
+<script>
+  const input = document.querySelector(".photoupload")
+  const label = document.querySelector(".photouploadlabel")
+  const file = document.querySelector(".photouploadfile")
+  const desc = document.querySelector(".fileupload")
+
+  input.addEventListener("click", () => {
+    label.click()
+  })
+  file.addEventListener("change", () => {
+    desc.innerText = file.value
+  })
+</script>
