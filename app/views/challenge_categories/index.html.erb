@@ -2,7 +2,7 @@
   <h1 class="font-oswald text-3xl text-moss text-center my-4">Challenge Categories</h1>
   <% @challenge_categories.each do |challenge_category| %>
   <div class="grid grid-cols-1">
-    <div class="bg-artichoke p-4 mx-4 rounded mb-4">
+    <div class="bg-artichoke p-4 mx-4 rounded mb-5">
       <%= link_to challenge_category_challenges_path(challenge_category,@challenges) do %>
         <div class="h-10 text-center">img</div>
         <div class="font-oswald text-moss text-2xl text-center"><%= challenge_category.name %></div>
