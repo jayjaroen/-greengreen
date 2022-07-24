@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :tips, only:[:index, :show, :new, :create]
   resources :challenge_categories, only:[:index, :show, :new, :create] do
     resources :challenges, only:[:index]
+    resources :rankings, only:[:index]
   end
   resources :challenges, only:[:show, :new, :create] do
     resources :user_challenges, only:[:create]
