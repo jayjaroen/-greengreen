@@ -5,10 +5,14 @@
   <div class="grid grid-cols-1">
     <div class="bg-artichoke p-4 mx-4 rounded mb-5">
       <%= link_to challenge_category_challenges_path(challenge_category,@challenges) do %>
-        <div class="h-10 text-center">img</div>
+      <div class="flex flex-col">
+        <div>
+          <%= cl_image_tag challenge_category.photo.key ,width: 400, height: 300, crop: :fill if challenge_category.photo && challenge_category.photo.key %>
+        </div>
         <div class="font-oswald text-moss text-2xl text-center"><%= challenge_category.name %></div>
         <div class="font-barlow text-moss text-center"><%= challenge_category.description %></div>
       <% end %>
+      </div>
     </div>
     <% end %>
   </div>

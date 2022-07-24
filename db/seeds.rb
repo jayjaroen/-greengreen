@@ -1,5 +1,6 @@
 # Challenge category and its challenges
 require 'faker'
+require 'open-uri'
 
 UserChallengeRecord.destroy_all
 UserChallenge.destroy_all
@@ -21,7 +22,9 @@ p challenge_food_3 = Challenge.create(action: 'Black coffee instead of cow milk 
 p challenge_food_4 = Challenge.create(action: 'Oat milk latte instead of cow milk latte', carbon_score: 264, challenge_category: category_food)
 
 # Challenge Category: Plastic
+plastic_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1658563472/Go%20green/3_dau2kr.jpg")
 p category_plastic = ChallengeCategory.create(name:'Plastics', description:'Ellen MacArthur: “Plastic doesn’t belong in nature, and we need to stop it from ending up there.”')
+category_plastic.photo.attach(io:plastic_photo, filename: "category_plastic.png", content_type: 'image/png')
 p tip_plastic_1 = Tip.create(name: 'Less plastics /Use re-usable water bottles', description: 'Did you know that more than 5 trillion pieces of plastic are already floating in our oceans? Every minute, a truck dumps plastic in our oceans, endangering wildlife and our environment. It is estimated that by 2050, virtually every seabird species on the planet will be eating plastic.', challenge_category: category_plastic )
 p challenge_plastic_1 = Challenge.create(action: 'No disposable cups', carbon_score: 110, challenge_category: category_plastic)
 p challenge_plastic_2 = Challenge.create(action: 'No plastic bags', carbon_score: 10, challenge_category: category_plastic)

@@ -30,6 +30,6 @@ before_action :find_challenge_category, only: :show
   end
 
   def challenge_category_params
-    params.require(:challenge_category).permit(:name, :description)
+    params.require(:challenge_category).permit(:name, :description, :photo)
   end
 end
