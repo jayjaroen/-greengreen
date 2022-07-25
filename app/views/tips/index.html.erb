@@ -1,6 +1,6 @@
 <main class="bg-lightsand h-screen">
-  <h1 class="text-moss text-4xl pt-4 pb-6 font-oswald text-center">Tips & Tricks</h1>
-    <div class="grid grid-cols-2 mx-4 gap-2">
+  <h1 class="text-moss text-4xl py-6 font-oswald text-center">Tips & Tricks <i class="fas fa-lightbulb text-moss"></i></h1>
+    <div class="grid grid-cols-2 mx-4 gap-4">
       <% @tips.each do |tip| %>
         <div class="bg-artichoke p-3 rounded shadow-lg">
           <%= link_to tip_path(tip)  do %>
