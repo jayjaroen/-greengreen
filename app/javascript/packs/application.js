@@ -23,3 +23,19 @@ import { toggleNavbar } from '../scripts/toggle-navbar'
 document.addEventListener("turbolinks:load", () =>{
   toggleNavbar()
 })
+
+// // sweet alert
+// import Swal from 'sweetalert2/dist/sweetalert2.min.js'
+// window.Swal = Swal
+
+// import { initSweetalert } from '../scripts/init_sweetalert';
+
+// initSweetalert('#swalButton', {
+//   title: "A nice alert",
+//   text: "This is a great alert, isn't it?",
+//   icon: "success"
+// });
+
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+window.Swal = Swal;
