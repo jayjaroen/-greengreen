@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   get 'pages/home', to: 'pages#home', as: 'home'
   get 'users/:id/profile', to: 'users#profile', as: 'profile'
 
+
   resources :users, only:[:edit, :update]
   resources :tips, only:[:index, :show, :new, :create]
   resources :challenge_categories, only:[:index, :show, :new, :create] do
     resources :challenges, only:[:index]
-    resources :rankings, only:[:index]
   end
   resources :challenges, only:[:show, :new, :create] do
     resources :user_challenges, only:[:create]
@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   resources :user_challenges, only:[:show] do
     resources :user_challenge_records, only:[:show, :create]
   end
+  resources :rankings, only:[:index]
 
 end

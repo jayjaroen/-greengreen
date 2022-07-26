@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :user_challenge_records, through: :user_challenges
   has_many :rankings
   has_many :challenges, through: :user_challenges
+  has_many :challenge_category, through: :challenges
   has_one_attached :photo
 
   def total_carbon_score
@@ -22,4 +23,13 @@ class User < ApplicationRecord
     total = total.reject{|x| x.nil?}.sum
   end
 
+  def total_carbon_score_category(challenge_category)
+    # in each category
+    # need to have an ID of challenge_category ( can join table more than two?)
+    total = ChallengeCategory.find_by(name: challenge_category).challenges.map do |challenge|
+      next if challenge.carbon_score.nil?
+      subtotal = challenge.carbon_score * user_challenges.joins(:user_challenge_records).where(challenge_id: challenge.id).count
+    end
+    total = total.reject{|x| x.nil?}.sum
+  end
 end
