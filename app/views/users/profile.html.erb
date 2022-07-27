@@ -1,25 +1,29 @@
 <main class="bg-lightsand h-screen">
-
 <%# Profile card - picture name and carbon emmissions saved %>
-  <div class="flex flex-start pt-6 ml-8">
-
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, :width=>100, :height=>100, gravity: :face, class:"object-scale-down", :gravity=>"face", :radius=>"max", :crop=>"fill" %>
-      <% else %>
-        <%= image_tag "noprofilepic.jpg", width: 100, height: 100, class:"object-scale-down rounded-full" %>
-      <% end %>
-    <p>
-      <h1 class="text-moss text-4xl ml-4 font-oswald pt-4"> Hello <%= current_user.first_name.capitalize  %></h1>
-      <%= link_to edit_user_path(@user) do %> <i class="fas fa-user-edit text-moss hover:text-lightmoss text-2xl ml-4 pt-6"></i> <% end %>
-    </p>
+  <div class="flex justify-center pt-6 ml-8">
+    <% if @user.photo.attached? %>
+       <%= cl_image_tag @user.photo.key, :width=>200, :height=>200, gravity: :face, :gravity=>"face", class: "profile-img p-0 rounded-full" %>
+    <% else %>
+      <%= image_tag "noprofilepic.jpg", width: 200, height: 200, class:"rounded-full p-o" %>
+    <% end %>
   </div>
 
-  <div class="bg-artichoke p-4 mx-4 rounded mt-4">
-    <div class="text-moss font-barlow text-2xl">You have saved <%= @user.total_carbon_score  %>  g C02E since  <%= @user.created_at.strftime("%Y-%m-%d") %> </div>
+  <div class="flex justify-center">
+    <h1 class="text-moss text-4xl ml-4 font-oswald pt-4 tracking-wider"> <%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize %></h1>
+    <%= link_to edit_user_path(@user) do %>
+    <i class="fas fa-user-edit text-moss hover:text-lightmoss text-2xl ml-4 pt-6"></i>
+  </div>
+    <% end %>
+
+  <div class="bg-artichoke p-6 mx-4 rounded mt-4">
+    <div class="text-moss font-barlow text-2xl flex flex-start">
+    <div class="font-bold  font-oswald px-4 text-6xl underline underline-offset-2"><%= @user.total_carbon_score  %> </div>
+    <div>gs C02E saved since  <%= @user.created_at.strftime("%Y-%m-%d") %></div>
+    </div>
   </div>
 
 
-<div class="bg-artichoke p-6 mx-4 rounded mt-2 font-barlow text-xl">
+<div class="bg-artichoke p-6 mx-4 rounded mt-4 font-barlow text-xl">
   <%#  Challenges heading %>
   <div class="flex flex-row">
     <h3 class="font-oswald text-3xl text-moss mb-4">Your challenges</h3>
