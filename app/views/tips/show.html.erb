@@ -1,13 +1,17 @@
 <main class="bg-lightsand h-screen">
 
   <div class="font-oswald text-2xl text-center text-moss py-4 flex justify-center">
-    <%= link_to tips_path do %> <i class="fas fa-long-arrow-alt-left font-moss p-2 pt-2 text-2xl pl-2"></i> <% end %>
-    <h1 class="font-oswald text-2xl pl-3 "> <%= @tip.name.upcase %></h1>
+    <%= link_to tips_path do %> <i class="fas fa-long-arrow-alt-left p-2 pt-2 text-2xl pl-2 hover:text-darkmoss"></i> <% end %>
+    <h1 class="font-oswald text-2xl"> <%= @tip.name.upcase %></h1>
   </div>
 
-  <div class ="flex flex-col bg-artichoke mx-4 rounded p-2">
+  <div class ="flex flex-col bg-artichoke mx-4 rounded p-2 shadow-lg md: mx-32">
     <div class="text-center text-moss">img</div>
-    <div class="font-barlow text-moss mt-4 text-xl text-center px-4"> <%= @tip.description.capitalize %></div>
+    <div class="font-barlow text-moss my-4 text-xl text-center px-4"> <%= @tip.description.capitalize %></div>
   </div>
-  <div> <%= link_to 'take the challenge', challenge_category_challenges_path(@tip.challenge_category)%></div>
+
+  <div class= "text-center mt-6 w-50 bg-lightmoss text-white font-barlow text-xl p-2 mt-4 rounded mx-4 hover:bg-darkmoss hover:text-white md: mx-32 ">
+  <%= link_to 'Take the challenge', challenge_category_challenges_path(@tip.challenge_category)%>
+  </div>
+
 </main>

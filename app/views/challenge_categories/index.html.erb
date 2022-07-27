@@ -1,12 +1,12 @@
 
-<main class="bg-whitesand h-screen">
-  <h1 class="font-oswald text-3xl text-moss text-center my-4">Challenge Categories</h1>
+<main class="bg-lightsand h-screen">
+  <h1 class="font-oswald text-3xl text-moss text-center py-4 md:py-8 md:text-4xl">Challenge Categories</h1>
   <% @challenge_categories.each do |challenge_category| %>
-  <div class="grid grid-cols-1">
-    <div class="bg-artichoke p-4 mx-4 rounded mb-5">
+  <div class="grid grid-cols-1 md:mx-32">
+    <div class="bg-artichoke p-4 mx-4 rounded mb-5 shadow-lg">
       <%= link_to challenge_category_challenges_path(challenge_category,@challenges) do %>
       <div class="flex flex-col">
-        <div>
+        <div class="flex items-center justify-center">
           <%= cl_image_tag challenge_category.photo.key ,width: 400, height: 300, crop: :fill if challenge_category.photo && challenge_category.photo.key %>
         </div>
         <div class="font-oswald text-moss text-2xl text-center"><%= challenge_category.name %></div>
