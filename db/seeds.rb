@@ -33,11 +33,14 @@ category = [category_food, category_plastic]
 challenge_food = [challenge_food_1, challenge_food_2, challenge_food_3, challenge_food_4]
 challenge_plastic = [challenge_plastic_1, challenge_plastic_2]
 
-10.times do
-  user = User.create(first_name: Faker::Name.name, email: Faker::Internet.email, password: Devise.friendly_token)
+20.times do
+  p user = User.create(first_name: Faker::Name.name, email: Faker::Internet.email, password: Devise.friendly_token)
   puts "created user #{user.id}"
-  3.times do
-    uc = UserChallenge.create(user: user, challenge: Challenge.all.sample)
-    UserChallengeRecord.create(user_challenge: uc, date: Faker::Date.between(from: 30.days.ago, to: Date.today))
+  n = rand(1..4)
+  p challenges = Challenge.all.sample(n)
+  n.times do
+    p uc = UserChallenge.create(user: user, challenge: challenges.pop)
+    p uc.errors.full_messages
+    p UserChallengeRecord.create(user_challenge: uc, date: Faker::Date.between(from: 30.days.ago, to: Date.today))
   end
 end

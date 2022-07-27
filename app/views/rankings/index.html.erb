@@ -1,0 +1,13 @@
+<h1>Ranking</h1>
+
+<p>Ranking for Food</p>
+<% @users.each do |user| %>
+  <%= user.first_name %>
+  <%= user.total_carbon_score_category("Food")%>
+<% end %>
+
+<p>Ranking for Plastic</p>
+<% @users.each do |user| %>
+  <%= user.first_name %>
+  <%= user.total_carbon_score_category("Plastics")%>
+<% end %>

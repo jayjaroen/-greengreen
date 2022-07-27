@@ -12,8 +12,10 @@ class UserChallengesController < ApplicationController
     @user_challenge = UserChallenge.new(user_challenge_params)
     authorize @user_challenge
     @user_challenge.user = current_user
-    @user_challenge.save if redirect_to profile_path(@user_challenge.user)
+   redirect_to profile_path(@user_challenge.user) if @user_challenge.save
     # alert if the challenge is selected
+    # switch alert / alert
+    # JS
   end
 
   private
