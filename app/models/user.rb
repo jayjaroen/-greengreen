@@ -32,4 +32,5 @@ class User < ApplicationRecord
     end
     total = total.reject{|x| x.nil?}.sum
   end
+
 end

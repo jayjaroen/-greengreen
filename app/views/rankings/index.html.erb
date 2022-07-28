@@ -3,28 +3,21 @@
   <div class="md:grid md:grid-cols-3">
 
   <!--- Ranking for different categories -->
+    <% ChallengeCategory.all.each do |category| %>
     <div>
-     <div class="font-barlow text-moss py-2 text-2xl text-center font-bold" >Food</div>
+     <div class="font-barlow text-moss py-2 text-2xl text-center font-bold" ><%= category.name %></div>
       <div class="bg-artichoke rounded p-4 mx-4 text-center">
-        <% @users.each do |user| %>
-          <div class="flex flex-col font-barlow text-moss">
-          <%= user.first_name %> <%= user.total_carbon_score_category("Food")%>
-          </div>
-       <% end %>
-     </div>
-    </div>
-
-  <div>
-   <div class="font-barlow text-moss py-2 text-2xl text-center font-bold" >Plastic</div>
-    <div class="bg-artichoke rounded p-4 mx-4 text-center">
-     <% @users.each do |user| %>
-      <div class="flex flex-col font-barlow text-moss">
-        <%= user.first_name %>
-        <%= user.total_carbon_score_category("Plastics")%>
+        <% CategoryScore.where(challenge_category: category).order(score: :desc).limit(5).each do |x|%>
+            <% if x.user.photo.attached? %>
+              <%= cl_image_tag x.user.photo.key, :width=>200, :height=>200, gravity: :face, :gravity=>"face", class: "profile-img p-0 rounded-full" %>
+            <% else %>
+              <%= image_tag "noprofile.jpg", width: 200, height: 200, class:"rounded-full p-o" %>
+            <% end %>
+          <p><%= x.user.first_name%>,<%= x.score %></p>
+        <% end %>
       </div>
-     <% end %>
+    <% end %>
     </div>
-   </div>
   </div>
 
 </main>
