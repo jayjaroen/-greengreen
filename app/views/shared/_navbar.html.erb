@@ -27,7 +27,8 @@
           <%= link_to current_user.first_name.capitalize, profile_path(current_user), class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke mb-1.5 mt-1.5"%>
           <%= link_to "Tips and Tricks", tips_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke"%>
           <%= link_to "Challenges", challenge_categories_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke"%>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"text-l text-white hover:bg-lightmoss  p-2 ml-1.5 rounded-2xl lg:inline-block block mb-2" %>
+          <%= link_to "Ranking", rankings_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke"%>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"text-l text-white hover:bg-lightmoss  lg:p-2 ml-1.5 rounded-2xl lg:inline-block block mb-2" %>
       <% else %>
         <%= link_to "Login", new_user_session_path, class:"text-l lg:inline-block block hover:text-artichoke mb-2 lg:mr-2" %>
         <%= link_to "Register", new_user_registration_path, class:"text-l text-white hover:bg-lightmoss bg-darkmoss p-2 ml-1.5 rounded-2xl lg:inline-block block" %>
