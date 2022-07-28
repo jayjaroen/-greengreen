@@ -5,8 +5,8 @@
     <h1 class="font-oswald text-2xl"> <%= @tip.name.upcase %></h1>
   </div>
 
-  <div class ="flex flex-col bg-artichoke mx-4 rounded p-2 shadow-lg md: mx-32">
-    <div class="text-center text-moss">img</div>
+  <div class ="flex flex-col bg-artichoke mx-4 rounded p-2 shadow-lg md:mx-32">
+    <div ><%= cl_image_tag @tip.photo.key %></div>
     <div class="font-barlow text-moss my-4 text-xl text-center px-4"> <%= @tip.description.capitalize %></div>
   </div>
 
