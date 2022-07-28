@@ -62,14 +62,14 @@ tip_plastic_2.photo.attach(io:tip_plastic_2_photo, filename:"tipplastic2.png", c
 
 # --------------Tips in Transportation Category-----------------
 # Transportation 1 - why fly when you zoom
-p tip_transportation_1 = Transportation.create(name:"Why fly when you can zoom?", description: "A carbon footprint of flying is massive. It is estimated that aviation carbon emission  is around 250 kg CO2 per hour of flying. If you are a regular flyer, your carbon footprint would be much higher than average. Environment wise, it would be reasonable to have an online meeting rather than flying in person if it’s possible. Did you know that having Zoom call on 13-inch Macbook pro emit 4 CO2 per hour? Maybe it’s time to think “carbon efficient!”")
+p tip_transportation_1 = Tip.create(name:"Why fly when you can zoom?", description: "A carbon footprint of flying is massive. It is estimated that aviation carbon emission  is around 250 kg CO2 per hour of flying. If you are a regular flyer, your carbon footprint would be much higher than average. Environment wise, it would be reasonable to have an online meeting rather than flying in person if it’s possible. Did you know that having Zoom call on 13-inch Macbook pro emit 4 CO2 per hour? Maybe it’s time to think “carbon efficient!”")
 
 # Transportation 2 - Your Choice of commute matters
-tip_transportation_2 = Transportation.create(name:"Your Choice of commute matters", description:"Did you know that transportation sector accounted for 20 percent of global Greenhouse gases emission and rapidly increasing? Our choice of daily commute matters to climate change more than we think.  The bottom line is all means of transport emit carbon but varying in a different degree.", challenge_category: category_transportation)
+tip_transportation_2 = Tip.create(name:"Your Choice of commute matters", description:"Did you know that transportation sector accounted for 20 percent of global Greenhouse gases emission and rapidly increasing? Our choice of daily commute matters to climate change more than we think.  The bottom line is all means of transport emit carbon but varying in a different degree.", challenge_category: category_transportation)
 
 # --------------Tips in Reduce/recycle/Category-----------------
 # Reduce 1 - Re-think purchase
-tip_reduce_1 = Reduce.create(name:"Re-think your purchases", description:"We all love the new Macbook Air M2. It is beautifully crafted powered by the newest Apple chip. But do you actually need a new laptop now? Is your current one still working just fine? Did you know that making laptop emit a huge amount of carbon? The carbon emission of 16-inch Macbook pro 1 TB storage is around 620 kg which is over a half of a ton! Reconsider your decision before spending that money for your new gadget or if necessary you may need to recycle your old one. ")
+tip_reduce_1 = Tip.create(name:"Re-think your purchases", description:"We all love the new Macbook Air M2. It is beautifully crafted powered by the newest Apple chip. But do you actually need a new laptop now? Is your current one still working just fine? Did you know that making laptop emit a huge amount of carbon? The carbon emission of 16-inch Macbook pro 1 TB storage is around 620 kg which is over a half of a ton! Reconsider your decision before spending that money for your new gadget or if necessary you may need to recycle your old one. ")
 
 
 
