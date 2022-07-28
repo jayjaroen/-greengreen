@@ -12,7 +12,7 @@ User.destroy_all
 # Challenge Categories
 
 #  Plastic + cloudinary svg
-plastic_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1658998176/Go%20green/plastic1_zl8hlg.svg")
+plastic_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659000941/Go%20green/plasticone_h98nqb.svg")
 p category_plastic = ChallengeCategory.create(name:'Plastics', description:'“Plastic doesn’t belong in nature, and we need to stop it from ending up there.”- Ellen MacArthur')
 category_plastic.photo.attach(io:plastic_photo, filename: "category_plastic.png", content_type: 'image/png')
 

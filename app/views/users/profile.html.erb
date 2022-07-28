@@ -6,7 +6,7 @@
         <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, :width=>200, :height=>200, gravity: :face, :gravity=>"face", class: "profile-img p-0 rounded-full" %>
         <% else %>
-          <%= image_tag "noprofilepic.jpg", width: 200, height: 200, class:"rounded-full p-o" %>
+          <%= image_tag "noprofile.jpg", width: 200, height: 200, class:"rounded-full p-o" %>
         <% end %>
       </div>
 
