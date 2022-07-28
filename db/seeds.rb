@@ -2,6 +2,7 @@
 require 'faker'
 require 'open-uri'
 
+CategoryScore.destroy_all
 UserChallengeRecord.destroy_all
 UserChallenge.destroy_all
 Challenge.destroy_all
