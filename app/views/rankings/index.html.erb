@@ -1,13 +1,23 @@
-<h1>Ranking</h1>
+<main class="bg-lightsand h-screen">
+  <h1 class="font-oswald text-moss py-4 text-4xl text-center">Ranking</h1>
 
-<p>Ranking for Food</p>
-<% @users.each do |user| %>
-  <%= user.first_name %>
-  <%= user.total_carbon_score_category("Food")%>
-<% end %>
+  <!--- Ranking for different categories -->
+  <div class="font-barlow text-moss py-2 text-2xl text-center font-bold" >Food</div>
+    <div class="bg-artichoke rounded p-4 mx-4">
+      <% @users.each do |user| %>
+        <div class="flex flex-col font-barlow text-moss">
+         <%= user.first_name %> <%= user.total_carbon_score_category("Food")%>
+        </div>
+      <% end %>
+      </div>
 
-<p>Ranking for Plastic</p>
-<% @users.each do |user| %>
-  <%= user.first_name %>
-  <%= user.total_carbon_score_category("Plastics")%>
-<% end %>
+   <div class="font-barlow text-moss py-2 text-2xl text-center font-bold" >Plastic</div>
+    <div class="bg-artichoke rounded p-4 mx-4">
+     <% @users.each do |user| %>
+      <div class="flex flex-col font-barlow text-moss">
+        <%= user.first_name %>
+        <%= user.total_carbon_score_category("Plastics")%>
+      </div>
+    <% end %>
+    </div>
+</main>
