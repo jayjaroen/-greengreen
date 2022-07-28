@@ -1,17 +1,18 @@
 
 <main class="bg-lightsand h-screen">
   <h1 class="font-oswald text-3xl text-moss text-center py-4 md:py-8 md:text-4xl">Challenge Categories</h1>
-  <% @challenge_categories.each do |challenge_category| %>
   <div class="grid grid-cols-1 md:mx-32">
+   <% @challenge_categories.each do |challenge_category| %>
+
     <div class="bg-artichoke p-4 mx-4 rounded mb-5 shadow-lg">
       <%= link_to challenge_category_challenges_path(challenge_category,@challenges) do %>
       <div class="flex flex-col">
         <div class="flex items-center justify-center">
-          <%= cl_image_tag challenge_category.photo.key ,width: 400, height: 300, crop: :fill if challenge_category.photo && challenge_category.photo.key %>
+          <%= cl_image_tag challenge_category.photo.key ,:effect=>"colorize", :color=>"green", width: 100, height: 100, crop: :fill if challenge_category.photo && challenge_category.photo.key %>
         </div>
         <div class="font-oswald text-moss text-2xl text-center"><%= challenge_category.name %></div>
         <div class="font-barlow text-moss text-center"><%= challenge_category.description %></div>
-      <% end %>
+       <% end %>
       </div>
     </div>
     <% end %>
