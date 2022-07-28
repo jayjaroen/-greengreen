@@ -9,8 +9,13 @@ Tip.destroy_all
 ChallengeCategory.destroy_all
 User.destroy_all
 
-# Challenge Category: Food
-p category_food = ChallengeCategory.create(name: 'Food', description:"What you eat and where your food come from matters to global warming more than you think")
+# Challenge Categories
+p category_food = ChallengeCategory.create(name: 'Food', description:"What you eat and where your food comes from matters to global warming more than you think")
+p category_electricity = ChallengeCategory.create(name: 'Electricity', description:"Energy saved is Energy Generated")
+p category_plastic = ChallengeCategory.create(name:'Plastic', description:`"Recycling more plastics can help local businesses and expand jobs while supporting the goals of sustainability."- Kevin de Leon`)
+p category_transportation = ChallengeCategory.create(name: 'Transportation', description:"Don’t be Fuelish.")
+p category_reduce =  ChallengeCategory.create(name: 'Re-duce, re-use, re-cycle', description:"Recycle the present, save the future.")
+
 # Tips in Food Category
 p tip_food_1 = Tip.create(name: 'Buy Local', description: 'Transportation of ingredients and food products are accounted for a large part of carbon emission in the food system -nearly one of fifth of carbon emission are factored into transportation.  So you may consider to buy food that produced locally to reduce this factor.', challenge_category: category_food)
 p tip_food_2 = Tip.create(name: 'Less Meat', description: 'Meat and dairy accounts for around 14.5% of global green house gas emissions. Cows are ruminant animal which have multi-chamber stomachs that rely on bacteria to digest plant-based foods. In the digestive process, a single cow can emit up to 500 litres of methane each day.',challenge_category: category_food)
@@ -32,6 +37,7 @@ p challenge_plastic_2 = Challenge.create(action: 'No plastic bags', carbon_score
 category = [category_food, category_plastic]
 challenge_food = [challenge_food_1, challenge_food_2, challenge_food_3, challenge_food_4]
 challenge_plastic = [challenge_plastic_1, challenge_plastic_2]
+
 
 20.times do
   p user = User.create(first_name: Faker::Name.name, email: Faker::Internet.email, password: Devise.friendly_token)
