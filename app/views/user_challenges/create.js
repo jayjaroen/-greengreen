@@ -4,7 +4,10 @@ Swal.fire({
   confirmButtonText: 'Okay'
 })
 // .then(function (result) {
-//   if (true) {
-//     window.location = "";
-//   }
+//   console.log(result)
+//   // if (true) {
+//   //   window.location = "";
+//   // }
 // })
+
+// async funciton
