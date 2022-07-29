@@ -1,11 +1,11 @@
 
 <main class="bg-lightsand h-screen">
   <div class="flex justify-center">
-    <div class="flex flex-col grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:px-8 md:px-16 lg:px-32">
+    <div class="flex flex-col grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:px-8 md:px-16 lg:px-32">
 
         <%# #Card one %>
           <%= link_to tips_path do %>
-            <div class="bg-artichoke rounded p-14 mx-6 h-80 mt-8 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss flex">
+            <div class="bg-artichoke rounded p-14 mx-8 h-80 mt-8 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss flex">
               <%# background image %>
               <div class="homeimage h-52 md:h-90 lg:h-80 mx-auto">
                 <%# # text and centering %>
@@ -18,18 +18,18 @@
           <% end %>
 
         <%= link_to challenge_categories_path do %>
-          <div class="bg-artichoke rounded p-14 mx-6 h-80 mt-12 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss flex">
-            <%# bg-image %>
+          <div class="bg-artichoke rounded p-14 mx-8 h-80 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss flex">
+          <%# bg-image %>
             <div class="homeimage2 h-52 md:h-90 lg:h-80 mx-auto">
-              <%# card-info %>
-              <div class="text-lightsand text-center drop-shadow-lg justify-center hover:scale-110">
-                <div class="text-2xl lg:text-2xl font-semibold drop-shadow-2xl font-oswald">C H A L L E N G E S</div>
-                <div class="text-l drop-shadow-2xl">Start saving the planet one habit at a time</div>
-              </div>
+            <%# card-info %>
+            <div class="text-lightsand text-center drop-shadow-lg justify-center hover:scale-110">
+              <div class="text-2xl lg:text-2xl font-semibold drop-shadow-2xl font-oswald">C H A L L E N G E S</div>
+              <div class="text-l drop-shadow-2xl">Start saving the planet one habit at a time</div>
+            </div>
             </div>
           </div>
         <% end %>
-
     </div>
+
   </div>
 </main>
