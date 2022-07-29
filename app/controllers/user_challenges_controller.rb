@@ -8,14 +8,17 @@ class UserChallengesController < ApplicationController
   end
 
   def create
-    @challenge = Challenge.find(params[:challenge_id])
-    @user_challenge = UserChallenge.new(user_challenge_params)
+    p @challenge = Challenge.find(params[:challenge_id])
+    @user_challenge = UserChallenge.new #(user_challenge_params)
+    @user_challenge.challenge = @challenge
     authorize @user_challenge
     @user_challenge.user = current_user
-   redirect_to profile_path(@user_challenge.user) if @user_challenge.save
+    p @user_challenge.save! #if
     # alert if the challenge is selected
-    # switch alert / alert
-    # JS
+    respond_to do |format|
+      format.js
+    end
+    # redirect_to profile_path(@user_challenge.user)
   end
 
   private
