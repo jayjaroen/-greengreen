@@ -44,9 +44,9 @@
           <div class="flex flex-row">
             <%= link_to user_challenge.challenge.action, user_challenge_path(user_challenge) %>
               <% if current_user.user_challenge_records.where(user_challenge: user_challenge, date: Time.current.in_time_zone('Beijing').to_date).present? %>
-                <div><i class="fab fa-envira text-lightmoss ml-2"></i> </div>
-             </div>
+                <div><i class="far fa-check-square text-moss text-2xl ml-2"></i> </div>
 
+             </div>
             <% else %>
 
           <%= form_with model: UserChallengeRecord.new, url: user_challenge_user_challenge_records_path(user_challenge) do |f| %>
@@ -54,7 +54,7 @@
             <%= f.hidden_field :date, value: Time.current.in_time_zone('Beijing').to_date %>
             <%# <%= f.submit 'Complete this Challenge for today' %>
              <%= f.button :submit do %>
-                  <i class="fas fa-check text-moss text-2xl ml-2"></i>
+                  <i class="far fa-square text-moss text-2xl ml-2"></i>
               <% end %>
           <% end %>
         <% end %>
