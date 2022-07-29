@@ -24,7 +24,7 @@
     <div class="lg:flex-grow text-center font-barlow text-xl">
 
       <% if user_signed_in? %>
-          <%= link_to current_user.first_name.capitalize, profile_path(current_user), class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke mb-1.5 mt-1.5"%>
+          <%= link_to current_user.first_name.capitalize, profile_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke mb-1.5 mt-1.5"%>
           <%= link_to "Tips and Tricks", tips_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke"%>
           <%= link_to "Challenges", challenge_categories_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke"%>
           <%= link_to "Ranking", rankings_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke"%>
