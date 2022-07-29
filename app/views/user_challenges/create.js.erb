@@ -1,0 +1,15 @@
+Swal.fire({
+  title: 'You have added a new challenge:)',
+  icon: 'success',
+  showCancelButton: true,
+  cancelButtonColor: '#d33',
+  cancelButtonText: 'Add more',
+  confirmButtonText: 'Go to profile'
+}).then((result) => {
+  console.log('result')
+  if (result.isConfirmed) {
+    console.log('result isConfirmed')
+    window.location.href = "<%= profile_path %>"
+  } else if (result.isDenied) {
+  }
+})
