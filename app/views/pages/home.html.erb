@@ -1,14 +1,14 @@
 
-<div id="home-screen" class="bg-lightsand overflow-hidden pt-16">
-  <div class="md:flex md:justify-center">
-    <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:px-8 mx-8 md:px-16 lg:px-32">
+<div id="home-screen" class="bg-lightsand overflow-hidden pt-14 pb-20 box-border">
+  <div class="md:flex md:justify-center h-full">
+    <div class="grid gap-6 grid-cols-1 grid-rows-2 h-full md:grid-cols-2 lg:grid-cols-2 sm:px-8 mx-8 md:px-16 lg:px-32 mt-8">
 
         <%# #Card one %>
           <%= link_to tips_path do %>
-            <div class="bg-artichoke rounded p-14 h-66 mt-8 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss">
-            <%# <div class="bg-artichoke rounded p-8 h-full w-full mt-8 shadow-xl shadow-moss md:my-16 md:h-96 lg:h-96"> %>
+            <%# <div class="bg-artichoke rounded p-14 h-66 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss"> %>
+            <div class="bg-artichoke rounded px-8 flex items-center h-full w-full shadow-xl shadow-moss md:my-16 md:h-96 lg:h-96">
               <%# background image %>
-              <div class="tipsimg bg-cover h-full md:h-90 lg:h-80 mx-auto">
+              <div class="tipsimg bg-cover md:h-90 lg:h-80 mx-auto">
                 <%# # text and centering %>
                 <div class="text-lightsand text-center drop-shadow-lg flex flex-col hover:scale-110">
                   <div class="text-3xl md:text-3xl lg:text-6xl font-semibold drop-shadow-xl text-4xl text-moss font-oswald tracking-wider">T I P S</div>
@@ -20,11 +20,11 @@
           <% end %>
 
         <%= link_to challenge_categories_path do %>
-          <div class="bg-artichoke rounded p-14 h-66 my-8 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss">
-           <%# <div class="bg-artichoke rounded p-8 h-full w-full mt-8 shadow-xl shadow-moss md:my-16 md:h-96 lg:h-96"> %>
+          <%# <div class="bg-artichoke rounded p-14 h-66 my-8 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss"> %>
+          <div class="bg-artichoke rounded px-8 flex items-center h-full w-full shadow-xl shadow-moss md:my-16 md:h-96 lg:h-96">
           <%# bg-image %>
             <%# <div class="challengeimg bg-cover h-52 md:h-90 lg:h-80 mx-auto"> %>
-            <div class="challengeimg bg-cover h-full md:h-90 lg:h-80 mx-auto">
+            <div class="challengeimg bg-cover md:h-90 lg:h-80 mx-auto">
             <%# card-info %>
             <div class="text-lightsand text-center drop-shadow-lg flex flex-col hover:scale-110">
               <div class="text-3xl md:text-3xl lg:text-6xl font-semibold drop-shadow-xl text-4xl text-moss font-oswald tracking-widest">CHALLENGES</div>
