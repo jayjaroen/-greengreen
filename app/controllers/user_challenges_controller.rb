@@ -13,7 +13,7 @@ class UserChallengesController < ApplicationController
     @user_challenge.challenge = @challenge
     authorize @user_challenge
     @user_challenge.user = current_user
-    p @user_challenge.save! #if
+    @user_challenge.save! #if
     # alert if the challenge is selected
     respond_to do |format|
       format.js

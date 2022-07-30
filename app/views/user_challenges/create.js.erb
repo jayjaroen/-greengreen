@@ -2,9 +2,14 @@ Swal.fire({
   title: 'You have added a new challenge:)',
   icon: 'success',
   showCancelButton: true,
-  cancelButtonColor: '#d33',
+  <!--- confirm button -->
+  confirmButtonText: 'Go to profile',
+  confirmButtonColor: '#80B26F',
+   <!---cancel button -->
+  cancelButtonColor: '#F1D460',
   cancelButtonText: 'Add more',
-  confirmButtonText: 'Go to profile'
+  reverseButtons: true
+
 }).then((result) => {
   console.log('result')
   if (result.isConfirmed) {
