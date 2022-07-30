@@ -19,9 +19,11 @@ import "stylesheets/application"
 // Turbolinks.start()
 // ActiveStorage.start()
 import { toggleNavbar } from '../scripts/toggle-navbar'
+import { setHeight } from '../scripts/set-home-screen-height'
 
 document.addEventListener("turbolinks:load", () =>{
   toggleNavbar()
+  setHeight()
 })
 
 // // sweet alert
