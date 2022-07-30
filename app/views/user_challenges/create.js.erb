@@ -1,20 +1,39 @@
-Swal.fire({
-  title: 'You have added a new challenge:)',
-  icon: 'success',
-  showCancelButton: true,
+<% if @user_challenge.valid? %>
+  Swal.fire({
+    title: 'You have added a new challenge:)',
+    icon: 'success',
+    showCancelButton: true,
+    <!--- confirm button -->
+    confirmButtonText: 'Go to profile',
+    confirmButtonColor: '#80B26F',
+    <!---cancel button -->
+    cancelButtonColor: '#F1D460',
+    cancelButtonText: 'Add more',
+    reverseButtons: true
+
+  }).then((result) => {
+    console.log(result)
+    if (result.isConfirmed) {
+      console.log('result isConfirmed')
+      window.location.href = "<%= profile_path %>"
+    <%# } else if (result.status == 422) {
+      console.log("result denied") %>
+    }
+  })
+<% else %>
+  Swal.fire({
+  title: 'You have added this challenge:)',
+  icon: 'error',
   <!--- confirm button -->
-  confirmButtonText: 'Go to profile',
+  confirmButtonText: 'Ok',
   confirmButtonColor: '#80B26F',
    <!---cancel button -->
-  cancelButtonColor: '#F1D460',
-  cancelButtonText: 'Add more',
   reverseButtons: true
 
 }).then((result) => {
-  console.log('result')
+  console.log(result)
   if (result.isConfirmed) {
-    console.log('result isConfirmed')
-    window.location.href = "<%= profile_path %>"
-  } else if (result.isDenied) {
+    Swal.close()
   }
 })
+<% end %>
