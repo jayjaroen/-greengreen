@@ -13,12 +13,18 @@ class UserChallengesController < ApplicationController
     @user_challenge.challenge = @challenge
     authorize @user_challenge
     @user_challenge.user = current_user
-    @user_challenge.save! #if
-    # alert if the challenge is selected
-    respond_to do |format|
-      format.js
-    end
-    # redirect_to profile_path(@user_challenge.user)
+    # if @user_challenge.save
+    @user_challenge.save
+      respond_to do |format|
+        format.js
+      end
+    # else
+    #   respond_to do |format|
+    #     format.js
+    #   end
+    #   # flash[:notice] = "You have already selected this challenge!"
+    #   # redirect_to  challenge_category_challenges_path(@challenge.challenge_category_id)
+    # end
   end
 
   private
