@@ -1,10 +1,10 @@
 <main class="bg-lightsand h-screen">
- <h1 class="font-oswald text-moss py-4 text-4xl text-center">Ranking <i class="fas fa-award text-moss"></i></h1>
+ <h1 class="font-oswald text-moss text-5xl text-center pt-16">Ranking <i class="fas fa-award text-moss"></i></h1>
   <div class="md:grid md:grid-cols-3">
 
   <!--- Ranking for different categories -->
     <% ChallengeCategory.all.each do |category| %>
-      <div class="font-barlow text-moss py-2 text-3xl text-center font-bold" ><%= category.name %></div>
+      <div class="font-barlow text-moss py-2 text-2xl text-center font-bold" ><%= category.name %></div>
 
         <!--- Card --------->
 

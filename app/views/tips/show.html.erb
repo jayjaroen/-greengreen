@@ -1,20 +1,21 @@
 <main class="bg-lightsand h-screen">
 
-  <div class="font-oswald text-2xl text-center text-moss py-4 flex justify-center">
-    <%= link_to tips_path do %> <i class="fas fa-long-arrow-alt-left p-2 pt-2 text-2xl pl-2 hover:text-darkmoss"></i> <% end %>
-    <h1 class="font-oswald text-2xl"> <%= @tip.name.upcase %></h1>
+  <div class="flex flex-row justify-between">
+    <div><%= link_to tips_path do %> <i class="fas fa-long-arrow-alt-left text-moss pt-8 text-2xl px-4 ml-2 w-16 text-3xl mt-16"></i> <% end %></div>
+    <div class="font-oswald text-3xl text-center py-6 text-moss mt-16"> <%= @tip.name.upcase %></div>
+    <div class="bg-lighsand w-16"></div>
   </div>
 
   <div class ="flex flex-col bg-artichoke mx-4 rounded p-2 shadow-lg md:mx-32">
     <div ><%= cl_image_tag @tip.photo.key %></div>
-    <div class="font-barlow text-moss my-4 text-xl text-center px-4"> <%= @tip.description.capitalize %></div>
+    <div class="font-barlow text-moss my-4 text-2xl text-center px-4"> <%= @tip.description.capitalize %></div>
   </div>
 
   <% if @tip.challenge_category.present? %>
-    <div class= "text-center mt-6 w-50 bg-lightmoss text-white font-barlow text-xl p-2 mt-4 rounded mx-4 hover:bg-darkmoss hover:text-white md: mx-32 ">
+    <div class= "text-center my-6 w-50 bg-lightmoss p-4 text-white font-barlow text-2xl rounded mx-4 hover:bg-darkmoss hover:text-white md:mx-32 ">
       <%= link_to 'Take the challenge', challenge_category_challenges_path(@tip.challenge_category)%>
     </div>
   <% end %>
 
-
+<div class="bg-lightsand h-2"></div>
 </main>

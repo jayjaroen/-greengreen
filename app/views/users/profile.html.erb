@@ -2,7 +2,7 @@
 <%# Profile card - picture name %>
   <div class="md:grid md:grid-cols-3 md:mx-12 md:pt-4">
     <div class="md:col-span-1">
-      <div class="flex justify-center pt-6">
+      <div class="flex justify-center pt-20">
         <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, :width=>200, :height=>200, gravity: :face, :gravity=>"face", class: "profile-img p-0 rounded-full" %>
         <% else %>
@@ -44,7 +44,7 @@
           <div class="flex flex-row">
             <%= link_to user_challenge.challenge.action, user_challenge_path(user_challenge), class:"mb-1.5" %>
               <% if current_user.user_challenge_records.where(user_challenge: user_challenge, date: Time.current.in_time_zone('Beijing').to_date).present? %>
-                <div><i class="far fa-check-square text-moss text-3xl mr-2.5"></i></div>
+                <div><i class="far fa-check-square text-moss text-3xl ml-2.5"></i></div>
              </div>
             <% else %>
 
