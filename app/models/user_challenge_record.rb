@@ -1,6 +1,5 @@
 class UserChallengeRecord < ApplicationRecord
   belongs_to :user_challenge
-
   after_create :calculate_category_score
 
   def calculate_category_score

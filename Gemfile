@@ -80,3 +80,9 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 # table_print
 gem 'table_print'
+
+# chartkick
+gem 'chartkick'
+
+# groupdate
+gem 'groupdate'
