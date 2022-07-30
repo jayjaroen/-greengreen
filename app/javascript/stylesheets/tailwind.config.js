@@ -14,6 +14,7 @@ module.exports = {
         'darkmoss': '#2D5C1D',
         'artichoke': '#C9D9B6',
         'lightsand': '#FEFBF6',
+        'bumblebee': '#F1D460',
       },
 
     },
