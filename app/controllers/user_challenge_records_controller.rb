@@ -7,7 +7,7 @@ class UserChallengeRecordsController < ApplicationController
     @date = Time.current.in_time_zone('Beijing').to_date
     authorize @user_challenge_record
     if @user_challenge_record.save!
-      redirect_to profile_path(current_user)
+      redirect_to profile_path
     end
   end
 

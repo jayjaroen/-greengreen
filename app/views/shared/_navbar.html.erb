@@ -1,7 +1,7 @@
-<nav class="bg-moss flex text-white items-center justify-between flex-wrap p-3" >
+<nav class="fixed top-0 inset-x-0 bg-moss flex text-white items-center justify-between flex-wrap p-3 rounded" >
   <div>
   <!---Name of website-->
-    <span class="text-2xl ml-2 cursor-pointer font-bold text-lightsand">
+    <span class="text-2xl ml-2 cursor-pointer font-bold font-barlow tracking-wider text-lightsand">
       <%= link_to "Go green", home_path %>
     </span>
   </div>
@@ -24,7 +24,7 @@
     <div class="lg:flex-grow text-center font-barlow text-xl">
 
       <% if user_signed_in? %>
-          <%= link_to current_user.first_name.capitalize, profile_path(current_user), class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke mb-1.5 mt-1.5"%>
+          <%= link_to current_user.first_name.capitalize, profile_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke mb-1.5 mt-1.5"%>
           <%= link_to "Tips and Tricks", tips_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke"%>
           <%= link_to "Challenges", challenge_categories_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke"%>
           <%= link_to "Ranking", rankings_path, class:"text-l lg:inline-block block mb-2 mx-1.5 hover:text-artichoke"%>

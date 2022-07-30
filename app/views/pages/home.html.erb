@@ -1,35 +1,39 @@
 
-<main class="bg-lightsand h-screen">
-  <div class="flex flex-col grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:px-8 md:px-16 lg:px-32 font-lora">
-      <%# #Card one %>
+<div class="bg-lightsand h-screen overflow-hidden pt-16">
+  <div class="md:flex md:justify-center">
+    <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:px-8 mx-8 md:px-16 lg:px-32">
 
-      <%= link_to tips_path do %>
-        <div class="bg-artichoke rounded p-14 mx-6 h-64 mt-16 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss flex">
-        <%# background image %>
-          <div class="homeimage h-52 md:h-90 lg:h-80 mx-auto">
-          <%# # text and centering %>
-              <div class="text-lightsand text-center drop-shadow-lg justify-center hover:scale-110">
-                <div class="text-3xl md:text-3xl lg:text-6xl font-semibold drop-shadow-2xl font-oswald">T I P S</div>
-                <div class="text-l drop-shadow-2xl">Learn more about our planet and how to be more eco-friendly</div>
+        <%# #Card one %>
+          <%= link_to tips_path do %>
+            <%# <div class="bg-artichoke rounded p-14 mx-8 h-66 mt-8 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss flex"> %>
+            <div class="bg-artichoke rounded p-14  h-full w-full mt-8 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss">
+              <%# background image %>
+              <%# <div class="tipsimg bg-cover h-52 md:h-90 lg:h-80 mx-auto"> %>
+              <div class="tipsimg bg-cover h-full md:h-90 lg:h-80 mx-auto">
+                <%# # text and centering %>
+                <div class="text-lightsand text-center drop-shadow-lg justify-center hover:scale-110">
+                  <div class="text-3xl md:text-3xl lg:text-6xl font-semibold drop-shadow-xl text-4xl text-moss font-oswald tracking-wider">T I P S</div>
+                  <div class="text-2xl text-moss font-barlow drop-shadow-xl font-bold mt-6">Learn more about our planet and how to be more eco-friendly</div>
+                </div>
               </div>
             </div>
-        </div>
-      <% end %>
+          <% end %>
 
-    <%= link_to challenge_categories_path do %>
-      <div class="bg-artichoke rounded p-14 mx-6 h-64 mt-12 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss flex">
-      <%# bg-image %>
-        <div class="homeimage2 h-52 md:h-90 lg:h-80 mx-auto">
-        <%# card-info %>
-        <div class="text-lightsand text-center drop-shadow-lg justify-center hover:scale-110">
-          <div class="text-2xl lg:text-2xl font-semibold drop-shadow-2xl font-oswald">C H A L L E N G E S</div>
-          <div class="text-l drop-shadow-2xl">Start saving the planet one habit at a time</div>
-         </div>
-        </div>
-      </div>
-    <% end %>
-
-
+        <%= link_to challenge_categories_path do %>
+          <%# <div class="bg-artichoke rounded p-14 mx-8 h-66 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss flex"> %>
+          <div class="bg-artichoke rounded p-14  h-full w-full mt-8 md:my-16 md:h-96 lg:h-96 shadow-xl shadow-moss">
+          <%# bg-image %>
+            <%# <div class="challengeimg bg-cover h-52 md:h-90 lg:h-80 mx-auto"> %>
+            <div class="challengeimg bg-cover h-full md:h-90 lg:h-80 mx-auto">
+            <%# card-info %>
+            <div class="text-lightsand text-center drop-shadow-lg justify-center hover:scale-110">
+              <div class="text-3xl md:text-3xl lg:text-6xl font-semibold drop-shadow-xl text-4xl text-moss font-oswald tracking-widest">CHALLENGES</div>
+              <div class="text-2xl text-moss font-barlow drop-shadow-xl font-bold mt-6">Start saving the planet one habit at a time</div>
+            </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
 
   </div>
-</main>
+</div>

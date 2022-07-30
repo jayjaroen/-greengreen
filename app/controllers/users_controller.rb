@@ -16,7 +16,7 @@ before_action :find_user, only: [:edit, :update]
   def update
     authorize @user
     if @user.update(user_params)
-      redirect_to profile_path(@user)
+      redirect_to profile_path
     else
       render 'edit'
     end

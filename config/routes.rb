@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: "pages#landing"
   get 'pages/home', to: 'pages#home', as: 'home'
-  get 'users/:id/profile', to: 'users#profile', as: 'profile'
+  get 'users/profile', to: 'users#profile', as: 'profile'
 
 
   resources :users, only:[:edit, :update]
