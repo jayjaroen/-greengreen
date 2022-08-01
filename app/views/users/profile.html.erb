@@ -48,20 +48,29 @@
              </div>
             <% else %>
 
-          <%= form_with model: UserChallengeRecord.new, url: user_challenge_user_challenge_records_path(user_challenge) do |f| %>
+            <%= form_with model: UserChallengeRecord.new, url: user_challenge_user_challenge_records_path(user_challenge) do |f| %>
             <%= f.hidden_field :user_challenge_id, value: user_challenge.id %>
             <%= f.hidden_field :date, value: Time.current.in_time_zone('Beijing').to_date %>
             <%# <%= f.submit 'Complete this Challenge for today' %>
+
              <%= f.button :submit do %>
                   <i class="far fa-square text-moss text-2xl ml-2"></i>
               <% end %>
+
+           <% end %>
+         <% end %>
+       </ol>
           <% end %>
-        <% end %>
-      </ol>
-    <% end %>
-     </div>
+           </div>
+         </div>
+      </div>
     </div>
   </div>
-  </div>
-  </div>
+  <% if current_user.user_challenges.count <= 0 %>
+  <div>+</div>
+  <% else %>
+  <div>user has challenges</div>
+  <% end %>
+
+  <% end %>
 </main>
