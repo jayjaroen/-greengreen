@@ -5,7 +5,13 @@ before_action :find_user, only: [:edit, :update]
     @user = current_user
     @challenges = @user.challenges
     @user_challenges = @user.user_challenges
+    @data = CategoryScore.joins(:user).where(user: current_user).includes(:challenge_category).group('challenge_categories.name').sum(:score)
+    authorize @user
+  end
 
+  def tracking_record
+    # multi series data for daily score / loggin record daily
+    @user = current_user
     authorize @user
   end
 

@@ -12,8 +12,14 @@
 
       <%# Displaying Chartkick %>
       <div>
-        <%= pie_chart CategoryScore.group(:challenge_category).sum(:score) %>
+        <%= pie_chart @data, donut: true%>
       </div>
+
+      <%# Tracking your progress  %>
+      <div>
+        <%= link_to 'View your progress',  tracking_record_path(current_user) %>
+      </div>
+
 
       <!--- Carbon emission saved-->
       <div class="flex justify-center">
