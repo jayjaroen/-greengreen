@@ -40,6 +40,31 @@
 
 
     <%# User challenges %>
+    <%# <div class="font-barlow text-moss text-3xl md:ml-8">
+      <% @user_challenges.each do |user_challenge| %>
+        <%# <ol> %>
+          <%# <div class="flex flex-row"> %>
+            <%# <%= link_to user_challenge.challenge.action, user_challenge_path(user_challenge), class:"mb-1.5" %>
+              <%# <% if current_user.user_challenge_records.where(user_challenge: user_challenge, date: Time.current.in_time_zone('Beijing').to_date).present? %>
+              <%# <p><i class="far fa-check-square text-moss text-3xl ml-2.5"></i></p> %>
+          <%# </div> %>
+              <%# <% else %>
+               <%# <%= form_with model: UserChallengeRecord.new, url: user_challenge_user_challenge_records_path(user_challenge) do |f| %>
+               <%# <%= f.hidden_field :user_challenge_id, value: user_challenge.id %>
+               <%# <%= f.hidden_field :date, value: Time.current.in_time_zone('Beijing').to_date %>
+               <%# <%= f.submit 'Complete this Challenge for today' %>
+                <%# <%= f.button :submit do %>
+                  <%# <i class="far fa-square text-moss text-2xl ml-2"></i> %>
+                <%# <% end %>
+              <%# <% end %>
+           <%# <% end %>
+        <%# </ol> %>
+      <%# <% end %>
+     <%# </div>  %>
+
+ <!--- If/elese statement-->
+<% if current_user.user_challenges.present? %>
+<!--True -->
     <div class="font-barlow text-moss text-3xl md:ml-8">
       <% @user_challenges.each do |user_challenge| %>
         <ol>
@@ -61,13 +86,14 @@
         </ol>
       <% end %>
      </div>
-
- <!--- If/elese statement: why is false printing the true statement?-->
-<% if current_user.user_challenge.present? %>
-  <p>Add challenges</p>
   <% else %>
-   <p>Here are your Challenges</p>
-<% end %>
+    <!--False -->
+    <div class="flex justify-center">
+      <%= link_to challenge_categories_path do %>
+       <i class="fa-solid fa-plus text-moss text-center text-6xl hover:text-lightmoss"></i>
+       <% end %>
+    </div>
+  <% end %>
 
    </div>
   </div>
