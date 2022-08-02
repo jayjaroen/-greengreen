@@ -31,7 +31,7 @@
   </div>
 
 <div class="md:col-span-2">
-  <div class="bg-artichoke p-4 mx-4 rounded mt-4 font-barlow text-xl md:h-full md:mt-16 shadow-large">
+  <div class="bg-artichoke p-4 mx-4 rounded mt-4 font-barlow text-xl md:h-full md:mt-16 shadow-lg">
     <%#  Challenges heading %>
     <%# <div class="flex flex-row">
       <h3 class="font-oswald text-4xl text-moss mb-4 md:text-4xl md:ml-8 tracking-wide">My challenges</h3>
@@ -65,7 +65,7 @@
 <% if current_user.user_challenges.present? %>
 <!--True -->
   <div class="flex flex-row">
-    <h3 class="font-oswald text-4xl text-moss mb-4 md:text-4xl md:ml-8 tracking-wide">My challengesss</h3>
+    <h3 class="font-oswald text-4xl text-moss mb-4 md:text-4xl md:ml-8 tracking-wide">My challenges</h3>
     <i class="fab fa-pagelines text-moss text-3xl ml-2 mt-1 md:mt-12"></i>
   </div>
 
@@ -80,7 +80,7 @@
               <%= f.hidden_field :date, value: Time.current.in_time_zone('Beijing').to_date %>
               <%# <%= f.submit 'Complete this Challenge for today' %>
               <%= f.button :submit do %>
-                <i class="far fa-square text-moss text-4xl ml-1"></i> <!--True -->
+                <i class="far fa-square text-moss text-4xl ml-1"></i>
               <% end %>
             <% end %>
            <% end %>
@@ -88,6 +88,12 @@
         </div>
     <% end %>
   </div>
+    <div class="flex justify-center">
+      <%= link_to challenge_categories_path do %>
+        <i class="fa-solid fa-plus text-lightsand text-3xl mt-2 mb-4 md:mt-12 rounded-full bg-moss p-2.5"></i>
+       <% end %>
+    </div>
+
 <% else %>
     <!--False -->
     <div class="flex justify-center">
@@ -102,5 +108,5 @@
 
    </div>
   </div>
-  <div style="height: 100px"></div>
+  <div class="bg-lightsand" style="height: 50px"></div>
 </main>
