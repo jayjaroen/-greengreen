@@ -1,9 +1,8 @@
 <main class="bg-lightsand h-screen">
 
   <div class="flex flex-row justify-between">
-
-      <div ><%= link_to challenge_categories_path do %> <i class="fas fa-long-arrow-alt-left text-moss pt-8 text-2xl px-4 ml-2 w-16 text-3xl pt-16"></i> <% end %></div>
-      <div class="font-oswald text-3xl text-center py-6 text-moss pt-16 md:pt-20"><%= @challenge_category.name.upcase %></div>
+      <div ><%= link_to challenge_categories_path do %> <i class="fas fa-long-arrow-alt-left text-moss pt-8 text-2xl px-4 ml-2 w-16 text-3xl pt-20"></i> <% end %></div>
+      <div class="font-oswald text-3xl text-center py-2 text-moss pt-20 md:pt-20"><%= @challenge_category.name.upcase %></div>
       <div class="bg-lighsand w-16"></div>
   </div>
 
@@ -12,26 +11,23 @@
       <div class="flex flex-row justify-center bg-artichoke rounded mx-4 p-2 mb-6 mt-4 shadow-lg">
         <div class="font-barlow text-2xl text-center text-darkmoss"> <%= challenge.action %></div>
           <%#= button_to "Join the challenge",challenge_user_challenges_path(challenge)%>
-
             <%#= form_with model: UserChallenge.new, url: challenge_user_challenges_path(challenge), remote: true, format: :js do |f| %>
               <%#= f.hidden_field :challenge_id, value: challenge.id %>
               <%# font awesome : add to challenges button %>
               <%#= f.submit 'Join the Challenge' %>
               <%= link_to challenge_user_challenges_path(challenge), remote: true, method: :post do %>
-              <div>
-                <%#= f.button :submit do %>
-                <i class="fas fa-plus text-moss mt-2 text-xl ml-2"></i>
-              </div>
+               <div>
+                 <%#= f.button :submit do %>
+                 <i class="fas fa-plus text-moss mt-2 text-2xl ml-2"></i>
+               </div>
               <% end %>
             <%# end %>
         </div>
-            <%# end %>
-         </div>
-
+      </div>
     <% end %>
+
   <% if policy(Challenge).create? %>
     <p>only for admin user</p>
     <%= link_to 'create new challenge', new_challenge_path %>
   <% end %>
-
 </main>
