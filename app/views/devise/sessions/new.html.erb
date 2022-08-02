@@ -1,11 +1,9 @@
-<main class="bg-white h-screen flex flex-col">
-  <h2 class="text-center text-moss text-5xl mt-16 mb-4 font-oswald">Welcome back!</h2>
-  <h4 class="text-center text-moss text-2xl mt-2 font-barlow tracking-wider">Please sign in</h4>
-  <div class="bg-artichoke rounded p-10 m-6 md:mx-20 lg:mx-20" >
-
+<main id="home-screen" class="bg-lightsand h-screen">
+  <h2 class="text-center text-moss text-5xl pt-20 mb-2 font-oswald">Welcome back!</h2>
+  <h4 class="text-center text-moss text-2xl my-2 font-barlow tracking-wider">Please sign in</h4>
+  <div class="bg-artichoke rounded p-10 mx-8 md:mt-6 md:mx-40 pb-6" >
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
       <div class="field">
         <%= f.label :email, :label => "E-mail", class:"text-darkmoss text-2xl tracking-wide mb-2 font-barlow" %><br/>
         <%= f.email_field :email, autofocus: true, autocomplete: "email",  class:"w-full p-2 bg-gray-50 text-gray-500 pl-2  mt-2 outline-none mb-4 rounded" %>
