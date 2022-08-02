@@ -18,59 +18,57 @@
       </div>
         <% end %>
 
-    <div class="bg-artichoke p-6 mx-4 rounded mt-4">
+     <div class="bg-artichoke p-6 mx-4 rounded mt-4">
       <div class="text-moss font-barlow text-2xl">
         <div class="flex flex-col text-center">
-         <p class="font-bold  font-oswald  text-6xl text-center"><%= @user.total_carbon_score  %> g </p>
+          <p class="font-bold  font-oswald  text-6xl text-center"><%= @user.total_carbon_score  %> g </p>
           <p class="mt-2">C02e</p>
           <p>saved since <%= @user.created_at.strftime("%Y-%m-%d") %></p>
         </div>
       </div>
     </div>
+
   </div>
 
 <div class="md:col-span-2">
-  <div class="bg-artichoke p-4 mx-4 rounded mt-4 font-barlow text-xl md:h-full">
+  <div class="bg-artichoke p-4 mx-4 rounded mt-4 font-barlow text-xl md:h-full md:mt-16">
     <%#  Challenges heading %>
     <div class="flex flex-row">
       <h3 class="font-oswald text-4xl text-moss mb-4 md:text-4xl md:ml-8 tracking-wide">My challenges</h3>
-      <i class="fab fa-pagelines text-moss text-3xl ml-2 mt-1"></i>
+      <i class="fab fa-pagelines text-moss text-3xl ml-2 mt-1 md:mt-12"></i>
     </div>
 
-  <%# User challenges %>
+
+    <%# User challenges %>
     <div class="font-barlow text-moss text-3xl md:ml-8">
       <% @user_challenges.each do |user_challenge| %>
         <ol>
           <div class="flex flex-row">
             <%= link_to user_challenge.challenge.action, user_challenge_path(user_challenge), class:"mb-1.5" %>
               <% if current_user.user_challenge_records.where(user_challenge: user_challenge, date: Time.current.in_time_zone('Beijing').to_date).present? %>
-                <div><i class="far fa-check-square text-moss text-3xl ml-2.5"></i></div>
-             </div>
-            <% else %>
-
-            <%= form_with model: UserChallengeRecord.new, url: user_challenge_user_challenge_records_path(user_challenge) do |f| %>
-            <%= f.hidden_field :user_challenge_id, value: user_challenge.id %>
-            <%= f.hidden_field :date, value: Time.current.in_time_zone('Beijing').to_date %>
-            <%# <%= f.submit 'Complete this Challenge for today' %>
-
-             <%= f.button :submit do %>
+              <p><i class="far fa-check-square text-moss text-3xl ml-2.5"></i></p>
+          </div>
+              <% else %>
+               <%= form_with model: UserChallengeRecord.new, url: user_challenge_user_challenge_records_path(user_challenge) do |f| %>
+               <%= f.hidden_field :user_challenge_id, value: user_challenge.id %>
+               <%= f.hidden_field :date, value: Time.current.in_time_zone('Beijing').to_date %>
+               <%# <%= f.submit 'Complete this Challenge for today' %>
+                <%= f.button :submit do %>
                   <i class="far fa-square text-moss text-2xl ml-2"></i>
+                <% end %>
               <% end %>
-
            <% end %>
-         <% end %>
-       </ol>
-          <% end %>
-           </div>
-         </div>
-      </div>
-    </div>
-  </div>
-  <% if current_user.user_challenges.count <= 0 %>
-  <div>+</div>
-  <% else %>
-  <div>user has challenges</div>
-  <% end %>
+        </ol>
+      <% end %>
+     </div>
 
-  <% end %>
+ <!--- If/elese statement: why is false printing the true statement?-->
+<% if current_user.user_challenge.present? %>
+  <p>Add challenges</p>
+  <% else %>
+   <p>Here are your Challenges</p>
+<% end %>
+
+   </div>
+  </div>
 </main>
