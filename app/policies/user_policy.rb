@@ -10,6 +10,10 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def tracking_record?
+    true
+  end
+
   def edit?
     user == record || user.admin
   end

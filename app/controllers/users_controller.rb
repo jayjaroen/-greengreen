@@ -5,6 +5,18 @@ before_action :find_user, only: [:edit, :update]
     @user = current_user
     @challenges = @user.challenges
     @user_challenges = @user.user_challenges
+    @data = CategoryScore.joins(:user).where(user: current_user).includes(:challenge_category).group('challenge_categories.name').sum(:score)
+    authorize @user
+  end
+
+  def tracking_record
+    # multi series data for daily score / loggin record daily
+    # total score by day / group by category
+    @user = current_user
+    # @score = UserChallengeRecord.joins(:user_challenges).joins(:challenges).where(user_challenge_id: current_user.id)
+    # @user.user_challenges.challenge.sum(:carbon_score).group_by_week(:created_at)
+    # @current_user.spendings.group(:date).sum(:amount)
+    # group by challenge_cate -- for each category --
     authorize @user
   end
 
