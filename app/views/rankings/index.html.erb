@@ -1,37 +1,34 @@
 <main class="bg-lightsand h-screen">
- <h1 class="font-oswald text-moss text-5xl text-center pt-16">Ranking <i class="fas fa-award text-moss"></i></h1>
-  <div class="font-barlow text-moss text-xl text-center mx-2 mt-2">The top #3 users who have saved the most Co2e </div>
+ <h1 class="font-oswald text-moss text-5xl text-center pt-20">Ranking <i class="fas fa-award text-moss"></i></h1>
+  <div class="font-barlow text-moss text-xl text-center mx-2 my-2">The top #3 overall users</div>
   <div class="md:grid md:grid-cols-3">
 
   <!--- Ranking for different categories -->
     <% ChallengeCategory.all.each do |category| %>
-      <div class="font-barlow text-moss py-2 text-2xl text-center font-bold" ><%= category.name %></div>
-
-        <!--- Card --------->
-
+      <div class="font-barlow text-moss py-2 text-3xl text-center font-bold flex justify-center tracking-wider mx-2" ><%= category.name %> </div>
+      <!--- Card --------->
       <% CategoryScore.where(challenge_category: category).order(score: :desc).limit(3).each do |x|%>
       <div class="bg-artichoke rounded p-4 mx-4 text-center mb-2">
       <!--- Profile pic -->
         <div class="flex flex-start">
-              <% if x.user.photo.attached? %>
-                <%= cl_image_tag x.user.photo.key, :width=>75, :height=>75, gravity: :face, :gravity=>"face", class: "pr-4 p-0 rounded-full" %>
-              <% else %>
-                <%= image_tag "noprofile.jpg", width: 75, height: 75, class:"rounded-full pr-4" %>
-              <% end %>
-        <!--- User name carbon emmissions -->
-            <div class="flex flex-col">
-            <div class="flex align-center">
-              <div class="font-oswald text-4xl font-bold text-moss tracking-wide"><%= x.score %></div>
+          <% if x.user.photo.attached? %>
+            <%= cl_image_tag x.user.photo.key, :width=>75, :height=>75, gravity: :face, :gravity=>"face", class: "pr-4 p-0 rounded-full" %>
+            <% else %>
+            <%= image_tag "noprofile.jpg", width: 75, height: 75, class:"rounded-full pr-4" %>
+          <% end %>
+            <!--- User name carbon emmissions -->
+          <div class="flex flex-col">
+          <div class="flex align-center">
+            <div class="font-oswald text-4xl font-bold text-moss tracking-wide"><%= x.score %></div>
 
-            </div>
-              <div class="font-barlow text-2xl text-moss"><%= x.user.first_name%></div>
-            </div>
+          </div>
+            <div class="font-barlow text-2xl text-moss"><%= x.user.first_name%></div>
+          </div>
         </div>
-</div>
-        <% end %>
 
+        </div>
+      <% end %>
     <% end %>
-
-
    </div>
+  <div class="bg-lightsand" style="height: 50px"></div>
 </main>

@@ -2,28 +2,30 @@
 
   <div class="flex flex-row justify-between">
 
-      <div ><%= link_to challenge_categories_path do %> <i class="fas fa-long-arrow-alt-left text-moss pt-8 text-2xl px-4 ml-2 w-16 text-3xl pt-16"></i> <% end %></div>
+      <div ><%= link_to challenge_categories_path do %> <i class="fas fa-long-arrow-alt-left text-moss pt-8 text-4xl px-4 ml-2 w-16 text-3xl pt-20"></i> <% end %></div>
       <div class="font-oswald text-4xl text-center py-6 text-moss pt-20 md:pt-20"><%= @challenge_category.name.upcase %></div>
       <div class="bg-lighsand w-16"></div>
   </div>
 
 
     <% @challenges.each do |challenge| %>
-      <div class="flex flex-row justify-center bg-artichoke rounded mx-4 p-2 mb-6 mt-4 shadow-lg">
-        <div class="font-barlow text-2xl text-center text-darkmoss"> <%= challenge.action %></div>
+    <%= link_to challenge_user_challenges_path(challenge), remote: true, method: :post do %>
+      <div class="flex flex-row bg-artichoke justify-center rounded mx-4 p-4 mb-6 mt-4 shadow-lg">
+        <div class="font-barlow text-2xl text-center text-darkmoss"> <%= challenge.action %>
           <%#= button_to "Join the challenge",challenge_user_challenges_path(challenge)%>
 
             <%#= form_with model: UserChallenge.new, url: challenge_user_challenges_path(challenge), remote: true, format: :js do |f| %>
               <%#= f.hidden_field :challenge_id, value: challenge.id %>
               <%# font awesome : add to challenges button %>
               <%#= f.submit 'Join the Challenge' %>
-              <%= link_to challenge_user_challenges_path(challenge), remote: true, method: :post do %>
-              <div>
+
+              <%# <div> %>
                 <%#= f.button :submit do %>
                 <i class="fas fa-plus text-moss mt-2 text-xl ml-2"></i>
-              </div>
+              <%# </div> %>
               <% end %>
             <%# end %>
+            </div>
         </div>
             <%# end %>
          </div>
