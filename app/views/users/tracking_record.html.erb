@@ -1,16 +1,14 @@
 <%# this section is hidden under the navbar %>
-<main class="bg-lightsand max-w-screen-xl mx-auto h-screen">
-  <div class = "mt-16">
-    <%= current_user.first_name %>
+<main>
     <%#= Progress over the pass week (total_score), should ti be additional line  %>
-    <p>Your Progress </p>
-      <%= line_chart @daily_scores %>
+    <p class="font-oswald text-4xl mt-20 text-center text-moss">Progress</p>
+    <!---Overall piechart-->
+     <p class="font-barlow text-4xl my-2 text-center text-moss tracking-wider">My overall progress</p>
+      <div>
+        <%= pie_chart @data, donut: true, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"]%>
+      </div>
 
-     <%#= Progress on each category? %>
-
-
-  </div>
-
-
-
+    <!---Daily progress-->
+    <p class="font-barlow text-4xl my-2 text-center text-moss tracking-wider">My daily progress</p>
+      <%= line_chart @daily_scores, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
 </main>

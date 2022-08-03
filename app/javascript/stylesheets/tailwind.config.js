@@ -13,6 +13,7 @@ module.exports = {
         'lightmoss': '#80B26F',
         'darkmoss': '#2D5C1D',
         'artichoke': '#C9D9B6',
+        'greygreen': '#9DB595',
         'lightsand': '#FEFBF6',
         'bumblebee': '#F1D460',
       },
