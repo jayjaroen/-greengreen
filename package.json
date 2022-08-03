@@ -7,7 +7,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
     "autoprefixer": "^9",
-    "chart.js": "^3.8.2",
+    "chart.js": "^3.9.0",
     "chartkick": "^4.2.0",
     "highcharts": "^10.2.0",
     "postcss": "^7",
