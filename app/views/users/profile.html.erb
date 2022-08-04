@@ -20,6 +20,10 @@
         <%= link_to 'View your progress',  tracking_record_path(current_user) %>
       </div>
 
+      <%#= Link to your country  %>
+      <div>
+       <%= link_to 'Learn more about your country emission', location_path(@location) %>
+      </div>
 
 
       <!--- Carbon emission saved-->
