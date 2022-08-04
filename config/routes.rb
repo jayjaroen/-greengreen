@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: "pages#landing"
   get 'pages/home', to: 'pages#home', as: 'home'
   get 'users/profile', to: 'users#profile', as: 'profile'
+  get 'users/profile/tracking_record', to: 'users#tracking_record', as: 'tracking_record'
 
 
   resources :users, only:[:edit, :update]
@@ -20,5 +21,6 @@ Rails.application.routes.draw do
     resources :user_challenge_records, only:[:show, :create]
   end
   resources :rankings, only:[:index]
+  resources :references, only:[:index]
 
 end
