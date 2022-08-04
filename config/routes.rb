@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
 
   resources :users, only:[:edit, :update]
+  resources :locations, only:[:show]
+
+
   resources :tips, only:[:index, :show, :new, :create]
   resources :challenge_categories, only:[:index, :show, :new, :create] do
     resources :challenges, only:[:index]
