@@ -11,6 +11,15 @@
       </div>
 
 
+
+
+      <%#= Link to your country  %>
+      <div>
+       <%= link_to 'Learn more about your country emission', location_path(@location) %>
+      </div>
+
+
+
       <!--- Carbon emission saved-->
       <div class="flex justify-center">
         <h1 class="text-moss text-4xl ml-4 font-oswald pt-4 tracking-wider"> <%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize %></h1>

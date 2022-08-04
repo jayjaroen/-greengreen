@@ -1,7 +1,9 @@
 # Challenge category and its challenges
 require 'faker'
 require 'open-uri'
+require 'json'
 
+Location.destroy_all
 CategoryScore.destroy_all
 UserChallengeRecord.destroy_all
 UserChallenge.destroy_all
@@ -157,4 +159,23 @@ p challenge_reduce_3 = Challenge.create(action: 'Recycle plastic (1kg)', carbon_
     p uc.errors.full_messages
     p UserChallengeRecord.create(user_challenge: uc, date: Faker::Date.between(from: 30.days.ago, to: Date.today))
   end
+end
+
+########################### parsing data from json##########################
+filepath = "data/emission_data.json"
+
+serialized_results = File.read(filepath)
+
+results = JSON.parse(serialized_results)
+p results
+results.each do |result|
+  location = Location.new
+  location.country = result['country']
+  location.emission_20 = result['totCO2_2020']
+  location.emission_17 = result['totCO2_2017']
+  location.per_cap_20 = result['co2PerCapita2020']
+  location.per_cap_17 = result['co2PerCapita2017']
+  location.pop_22 = result['pop2022']
+  p location
+  p location.save
 end

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country: MyString
+  emission_20: MyString
+  emission_17: MyString
+  per_cap_20: MyString
+  per_cap_17: MyString
+  pop_22: MyString
+
+two:
+  country: MyString
+  emission_20: MyString
+  emission_17: MyString
+  per_cap_20: MyString
+  per_cap_17: MyString
+  pop_22: MyString
