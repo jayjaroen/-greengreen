@@ -22,14 +22,14 @@
     <% end %>
 
 
-              <%#= form_with model: UserChallenge.new, url: challenge_user_challenges_path(challenge), remote: true, format: :js do |f| %>
-                <%#= f.hidden_field :challenge_id, value: challenge.id %>
-                <%# font awesome : add to challenges button %>
-                <%#= f.submit 'Join the Challenge' %>
-                <%# <div> %>
-                <%#= f.button :submit do %>
-                <%# </div> %>
-            <%# end %>
+    <%#= form_with model: UserChallenge.new, url: challenge_user_challenges_path(challenge), remote: true, format: :js do |f| %>
+      <%#= f.hidden_field :challenge_id, value: challenge.id %>
+      <%# font awesome : add to challenges button %>
+      <%#= f.submit 'Join the Challenge' %>
+      <%# <div> %>
+      <%#= f.button :submit do %>
+      <%# </div> %>
+      <%# end %>
     <%# end %>
   <% if policy(Challenge).create? %>
     <p>only for admin user</p>
