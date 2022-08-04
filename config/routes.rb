@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   get 'pages/home', to: 'pages#home', as: 'home'
   get 'users/profile', to: 'users#profile', as: 'profile'
   get 'users/profile/tracking_record', to: 'users#tracking_record', as: 'tracking_record'
-  get 'users/profile/location', to: 'users#location', as: 'location'
+
 
   resources :users, only:[:edit, :update]
+  resources :locations, only:[:show]
+
+
   resources :tips, only:[:index, :show, :new, :create]
   resources :challenge_categories, only:[:index, :show, :new, :create] do
     resources :challenges, only:[:index]

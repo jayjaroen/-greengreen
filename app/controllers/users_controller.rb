@@ -7,6 +7,7 @@ before_action :find_user, only: [:edit, :update]
     @user_challenges = @user.user_challenges
     @data = CategoryScore.joins(:user).where(user: current_user).includes(:challenge_category).group('challenge_categories.name').sum(:score)
     authorize @user
+    @location = Location.find_by(country: @user.country)
   end
 
   def tracking_record
