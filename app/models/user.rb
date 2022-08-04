@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :challenges, through: :user_challenges
   has_many :challenge_category, through: :challenges
   has_one_attached :photo
+  validates :country, presence: true
 
   def total_carbon_score
     total = Challenge.all.map do |challenge|
