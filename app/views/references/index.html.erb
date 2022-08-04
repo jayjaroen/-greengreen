@@ -1,4 +1,13 @@
 <main>
-<div class="text-center text-4xl font-oswald tracking-wider pt-20 text-moss">References</div>
+<div class="text-center text-4xl font-oswald tracking-wider pt-20 text-moss py-4">References <i class="fas fa-books"></i></div>
+    <div class="referenceimg bg-cover mx-4 rounded shadow-lg p-4">
+      <div class="text-2xl font-barlow text-darkmoss pt-2 flex flex-col text-center">
+        <% @references.each do |reference| %>
+        <div class="py-2"><%= reference.name %></div>
+        <% end %>
+      </div>
+    </div>
 
+    <div class="text-3xl"><i class="fas fa-books"></i></div>
+    <i class="fas fa-book-heart"></i>
 </main>
