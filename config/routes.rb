@@ -24,5 +24,6 @@ Rails.application.routes.draw do
     resources :user_challenge_records, only:[:show, :create]
   end
   resources :rankings, only:[:index]
+  resources :references, only:[:index]
 
 end
