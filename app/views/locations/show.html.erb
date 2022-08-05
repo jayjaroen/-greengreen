@@ -1,8 +1,65 @@
 <div class="mt-20">
-<div class="text-center font-oswald text-moss text-4xl"><%= @location.country %></div>
-<div>Total Emission in 2020<%= @location.emission_20%> MT Co2 Emission</div>
-<div>Total Emission in 2017<%= @location.emission_17 %>MT Co2 Emission</div>
-<div>Emission per capita in 2020<%= @location.per_cap_20 %>tons per capita</div>
-<div>Emission per capita in  2017<%= @location.per_cap_17 %>tons per capita</div>
-<div>Population in 2022 <%= @location.pop_22 %></div>
+<div class="text-center font-oswald text-moss text-4xl tracking-wider"><%= @location.country.upcase %></div>
+  <div class="flex justify-center"><%= image_tag "melt.jpg", class:"h-40" %></div>
+   <div class="text-center font-barlow text-moss text-3xl tracking-wider">Total carbon emission(mt)</div>
+
+    <div class="grid grid-cols-2 m-2 gap-2">
+      <div class="bg-artichoke  p-4 rounded text-moss font-barlow text-xl tracking-wider text-center">
+        <div class="font-oswald text-3xl text-moss text-center" >2017</div>
+        <div class="h-3"></div>
+        <div class="font-oswald text-3xl text-moss"><%= @location.emission_17 %></div>
+        <%# <div class="font-oswald text-3xl text-moss " >MT</div> %>
+        <%# <div class="font-oswald text-3xl text-moss ">of C02e</div>
+        <div class="font-oswald text-3xl text-moss " >in 2017</div> %>
+      </div>
+
+      <div class="bg-artichoke p-4 rounded text-moss font-barlow text-xl tracking-wider">
+        <div>
+          <% if @location.emission_20  > @location.emission_17 %>
+            <div class="font-oswald text-3xl text-moss text-center tracking-wider" >2020</div>
+            <div class="upimg bg-contain md:h-90 lg:h-80 mx-auto"></div>
+            <div class="font-oswald text-3xl text-moss"><%= @location.emission_20%> </div>
+           <% else %>
+            <div class="downimg bg-contain md:h-90 lg:h-80 mx-auto">
+            <div class="font-oswald text-3xl text-moss text-center tracking-wider" >2020</div>
+            <div class="font-oswald text-3xl text-moss mt-5 text-center"><%= @location.emission_20%> </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+        <!--- nav menu -->
+      <div class="flex justify-center"><%= image_tag "city.jpg", class:"h-40" %></div>
+
+        <div class="text-center font-barlow text-moss text-3xl tracking-wider">Per capita (tons)</div>
+        <%# <div class="font-oswald text-3xl text-moss " >MT</div>
+        <div class="font-oswald text-3xl text-moss ">of C02e</div> %>
+        <%# <div class="font-oswald text-3xl text-moss " >in 2020</div> %>
+        <div class="grid grid-cols-2 m-2 gap-2">
+          <div class="bg-artichoke  p-4 rounded text-moss font-barlow text-xl tracking-wider text-center">
+            <div class="font-oswald text-3xl text-moss text-center" >2017</div>
+            <div class="h-3"></div>
+            <div class="font-oswald text-3xl text-moss"><%= @location.per_cap_17 %></div>
+            <%# <div class="font-oswald text-3xl text-moss " >MT</div> %>
+            <%# <div class="font-oswald text-3xl text-moss ">of C02e</div>
+            <div class="font-oswald text-3xl text-moss " >in 2017</div> %>
+          </div>
+
+          <div class="bg-artichoke  p-4 rounded text-moss font-barlow text-xl tracking-wider text-center">
+            <div class="font-oswald text-3xl text-moss text-center" >2020</div>
+            <div class="h-3"></div>
+            <div class="font-oswald text-3xl text-moss"><%= @location.per_cap_20 %></div>
+          </div>
+        </div>
+
+
+
+  </div>
+
+<%# <div>Emission per capita in 2020<%= @location.per_cap_20 %>
+<%# tons per capita</div> %>
+<%# <div>Emission per capita in  2017<%= @location.per_cap_17 %>
+<%# tons per capita</div> %>
+<%# <div>Population in 2022 <%= @location.pop_22 %>
 </div>
