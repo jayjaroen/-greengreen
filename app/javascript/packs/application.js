@@ -45,3 +45,10 @@ window.Swal = Swal;
 // Chartkick & Highcharts
 import "chartkick/chart.js"
 import "chartkick/highcharts"
+
+// Mapbox
+import { initMapbox } from './map.js';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})

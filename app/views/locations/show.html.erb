@@ -1,8 +1,17 @@
 <div class= "mt-20">
-<div><%= @location.country %></div>
-<div>Total Emission in 2020<%= @location.emission_20%> MT Co2 Emission</div>
-<div>Total Emission in 2017<%= @location.emission_17 %>MT Co2 Emission</div>
-<div>Emission per capita in 2020<%= @location.per_cap_20 %>tons per capita</div>
-<div>Emission per capita in  2017<%= @location.per_cap_17 %>tons per capita</div>
-<div>Population in 2022 <%= @location.pop_22 %></div>
+<%#= mapbox  %>
+
+  <div id="map"
+    style="width: 100%; height: 600px;"
+    data-marker="<%= @marker.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+  <div><%= @location.country %></div>
+  <div>Total Emission in 2020<%= @location.emission_20%> MT Co2 Emission</div>
+  <div>Total Emission in 2017<%= @location.emission_17 %>MT Co2 Emission</div>
+  <div>Emission per capita in 2020<%= @location.per_cap_20 %>tons per capita</div>
+  <div>Emission per capita in  2017<%= @location.per_cap_17 %>tons per capita</div>
+  <div>Population in 2022 <%= @location.pop_22 %></div>
+
 </div>
