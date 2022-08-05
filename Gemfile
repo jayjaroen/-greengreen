@@ -86,3 +86,6 @@ gem 'chartkick'
 
 # groupdate
 gem 'groupdate'
+
+# geocoding
+gem 'geocoder'
