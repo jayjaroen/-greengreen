@@ -10,11 +10,10 @@
       <div class="text-center text-4xl font-oswald tracking-wider text-moss py-2">References <i class="fas fa-books"></i></div>
         <div class="text-xl text-moss font-barlow text-center mx-4 py-2">Our main source is from "The Carbon Footprint of Everything" by Mike Berners-Lee. We have also included a list of all the websites that helped inform us about our daily carbon emissions.</div>
 
-          <div class="text-2xl font-barlow text-darkmoss pt-2 flex flex-col text-center">
+          <div class="text-l font-barlow text-moss pt-2 flex flex-col text-left mx-4">
             <% i = 0 %>
             <% @references.each do |reference| %>
-            <div class="py-2"><%= i += 1 %>.<%= reference.name %></div>
+            <div class="py-2"><%= i += 1 %> . <%= reference.name %></div>
             <% end %>
-
         </div>
 </main>
