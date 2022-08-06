@@ -42,84 +42,69 @@ category_reduce.photo.attach(io:reduce_photo, filename: "category_reduce.png", c
 # --------------Tips in Food Category-----------------
 # Food tip 1 - buy local
 tip_food_1_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1658815101/Go%20green/local_inqwvu.png")
-p tip_food_1 = Tip.create(name: 'Buy Local', description: 'By supporting small-scale, locally owned businesses, you can help cut carbon emissions and air pollution. By buying locally, you are deducing your food miles, transportation pollution and plastic packaging waste. Did you know? That in 2019, it was reported that Amazon  produced over 465 million pounds of plastic packaging waste.
-  Start supporting your local markets today!
-  .', challenge_category: category_food)
+p tip_food_1 = Tip.create(name: 'Buy Local', description: 'By supporting small-scale, locally owned businesses, you can help cut carbon emissions and air pollution. By buying locally, you are reducing your food miles, transportation pollution and plastic packaging waste. Did you know? In 2019, it was reported that Amazon produced over 465 million pounds of plastic packaging waste. Start supporting your local markets today!.', challenge_category: category_food)
 tip_food_1.photo.attach( io: tip_food_1_photo, filename: "tip_food_1_photo.png", content_type: 'image/png')
 
 # Food tip 2 - less meat
 tip_food_2_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1658815465/Go%20green/cow_ywwv9u.jpg")
-p tip_food_2 = Tip.create(name: 'Less Meat', description: 'Livestock agriculture is one of the biggest contributors to climate change. A single cow can emit up to 500 litres of methane a day. Over 70% of cows live on factory farms, where profit is prioritized over living conditions and pollution produced.
-  Factory farms contribute to climate change because of the amount of animal waste and methane gas produced which directly impacts the planet. How can we start eating less meat?
-  It is recommended to start off by introducing meatless mondays, introduce more beans to your diet as well as  meat alternatives like Beyond burgers.
-  .',challenge_category: category_food)
+p tip_food_2 = Tip.create(name: 'Less meat', description: 'Livestock agriculture is one of the biggest contributors to climate change. A single cow can emit up to 500 litres of methane a day. Over 70% of cows live on factory farms, where profit is prioritized over living conditions and pollution produced. Factory farms contribute to climate change because of the amount of animal waste and methane gas produced which directly impacts the planet. How can we start eating less meat? It is recommended to start off by introducing meatless mondays, introduce more beans to your diet as well as meat alternatives like Beyond burgers.',challenge_category: category_food)
 tip_food_2.photo.attach(io: tip_food_2_photo, filename: "tip_food_2_photo.png", content_type:'image/png')
 
 # Food tip 3 = plant-based meat
 tip_food_3_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659145630/Go%20green/plantbasedmeat_xc5fvu.jpg")
-p tip_food_3 = Tip.create(name: 'Plant-based Meat as an alternative', description: 'Did you know? Plant-based meat and alternatives  emit less greenhouse gasses of around 30%-90% than conventional meat. Thinking in terms of carbon emission, eating vegetables is more efficient than growing plants to feed animals and eating those animals. Currently there are many delicious plant-based meat alternatives to pick from. So why not give it a try and be more environmentally friendly?')
+p tip_food_3 = Tip.create(name: 'Plant-based meat as an alternative', description: 'Did you know? Plant-based meat and alternatives emit less greenhouse gasses of around 30%-90% than conventional meat. Thinking in terms of carbon emission, eating vegetables is more efficient than growing plants to feed animals and eating those animals. Currently, there are many plant-based meat alternatives to pick from. So why not give it a try and be more environmentally friendly?')
 tip_food_3.photo.attach(io: tip_food_3_photo, filename: "tip_food_3_photo.png", content_type: 'image/png')
 
 # Food tip 4 = Your Choice of Coffee Matters
 tip_food_4_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659146439/Go%20green/dairy01_h289jb.png")
-p tip_food_4 = Tip.create(name: 'Your Choice of Coffee Matters', description: 'Yes, your choice of coffee has a large impact on climate change more than you know.
-  A cup of black coffee emit 87 g CO2
-  A cup of large oat milk latte emit 288 g CO2
-  A cup of large cow milk latte emit 552 g CO2
-  Did you know? Enjoying a cup  of latte, leaves a larger carbon footprint when compared to an expresso.
-  The carbon emissions  that come from milk requires a lot of resources to produce.',
-  challenge_category: category_food
-  )
+p tip_food_4 = Tip.create(name: 'Your Choice of Coffee Matters', description: 'Yes, your choice of coffee has a large impact on climate change more than you know. A cup of black coffee emits 87g CO2e. A cup of large oat milk latte emits 288g CO2e. A cup of large cow milk latte emits 552g CO2. Did you know? Enjoying a cup  of latte, leaves a larger carbon footprint when compared to an expresso. The carbon emissions  that come from milk requires a lot of resources to produce.', challenge_category: category_food )
 tip_food_4.photo.attach(io: tip_food_4_photo, filename: "tip_food_4_photo.png", content_type: 'image/png')
 
 # --------------Tips in Plastic Category-----------------
 # Plastic tip 1 - less plastic
 tip_plastic_1_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1658563472/Go%20green/3_dau2kr.jpg")
-p tip_plastic_1 = Tip.create(name: 'Less plastics /Use re-usable water bottles', description: 'Did you know that more than 5 trillion pieces of plastic are already floating in our oceans? Every minute, a truck dumps plastic in our oceans, endangering wildlife and our environment. It is estimated that by 2050, virtually every seabird species on the planet will be eating plastic.', challenge_category: category_plastic )
+p tip_plastic_1 = Tip.create(name: 'Less plastics /Use re-usable water bottles', description: 'Did you know that more than 5 trillion pieces of plastic are already floating in our oceans? Every minute, a truck dumps plastic in our oceans, endangering wildlife and our environment. It is estimated that by 2050, virtually every seabird species on the planet will be eating plastic. Start reducing your plastic footprint today!', challenge_category: category_plastic )
 tip_plastic_1.photo.attach(io: tip_plastic_1_photo, filename:"tipplastic1.png", content_type:'image/png')
 
 # Plastic tip 2 - water bottle
 tip_plastic_2_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659012366/Go%20green/waterbottle_eyyosm.jpg")
-p tip_plastic_2 = Tip.create(name: 'Carry your own water bottle', description: 'Instead of buying a bottled water, you may consider carrying your own re-usable water bottle. Buying 1.5 bottled water can leave a 200 g CO2 footprint.If you carry your own water bottle and refill at a refill station everyday, you can save around 73 kg of CO2 emissions per year! Small actions have an accumulated effect. ', challenge_category: category_plastic )
+p tip_plastic_2 = Tip.create(name: 'Carry your own water bottle', description: 'Instead of buying bottled water, you may consider carrying your own re-usable water bottle. Buying 1.5 bottled water can leave a 200g CO2 footprint. If you carry your own water bottle, you can save around 73 kg of CO2 emissions per year! Small actions have a large accumulated effect.', challenge_category: category_plastic )
 tip_plastic_2.photo.attach(io:tip_plastic_2_photo, filename:"tipplastic2.png", content_type:'image/png')
 
 # --------------Tips in Transportation Category-----------------
 # Transportation 1 - why fly when you zoom
 tip_transportation_1_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659146968/Go%20green/flying_ea6rov.png")
-p tip_transportation_1 = Tip.create(name:"Why fly when you can zoom?", description: "A carbon footprint of flying is massive. It is estimated that aviation carbon emission  is around 250 kg CO2 per hour of flying. If you are a regular flyer, your carbon footprint would be much higher than average. Environment wise, it would be reasonable to have an online meeting rather than flying in person if it’s possible. Did you know that having Zoom call on 13-inch Macbook pro emit 4 CO2 per hour? Maybe it’s time to think “carbon efficient!”")
+p tip_transportation_1 = Tip.create(name:"Why fly when you can zoom?", description: "Did you know? Flying is the most damaging way to travel for our planet. It is estimated that aviation carbon emission is around 250kg CO2 per hour of flying. If you are a regular flyer, your carbon footprint would be much higher than average. How can we reduce flying? Try travelling via trains or choosing an alternative way to get from point A to B.")
 tip_transportation_1.photo.attach(io:tip_transportation_1_photo, filename:"tiptransportation1.png", content_type:'image/png')
 
 # Transportation 2 - Your Choice of commute matters
 tip_transportation_2_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1658825916/Go%20green/transportation_admxzo.jpg")
-p tip_transportation_2 = Tip.create(name:"Your choice of commute matters", description:"Did you know that transportation sector accounted for 20 percent of global Greenhouse gases emission and rapidly increasing? Our choice of daily commute matters to climate change more than we think.  The bottom line is all means of transport emit carbon but varying in a different degree.", challenge_category: category_transportation)
+p tip_transportation_2 = Tip.create(name:"Your choice of commute matters", description:"Did you know that the transportation sector accounted for 20 percent of global greenhouse emissions and rapidly it is continously increasing? Our choice of daily commute matters to climate change more than we think.  The bottom line is all means of transport emit carbon but varying in a different degree. (Biking emits around 21 g CO2e/km, a bus emits around 107 g CO2e/km, car emits around 270 g CO2e/km). If we commute by car for 20km every day for a year, we would emit around 1.97 ton CO2e per year. This emission rate is even higher than the annual emission per capita of Fiji (2019) which stands at 1.8 ton CO2e.", challenge_category: category_transportation)
 tip_transportation_2.photo.attach(io:tip_transportation_2_photo, filename:"tiptransportation2.png", content_type:'image/png')
 
 
 # --------------Tips in Electricity-----------------
 # Electricity 1 - Reduce your Screen Time
 tip_electricity_1_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659146299/Go%20green/nature_bkbzjc.jpg")
-p tip_electricity_1 = Tip.create(name:"Reduce your screen time", description: "In 2020, there are around 7.7 billion mobile phones in use which is estimated to emit around 580 million tons CO2e – which roughly accounted for 1 percent of global emissions! Sending texts, downloading data from your smartphone accounts for some degrees of carbon footprint. Maybe it’s time to put down your phone for a little, disconnect yourself from the internet and pick up your favorite book instead?", challenge_category: category_electricity)
+p tip_electricity_1 = Tip.create(name:"Reduce your screen time", description: "In 2020, there are around 7.7 billion mobile phones in use which is estimated to emit around 580 million tons of CO2e – which roughly accounted for 1 percent of global emissions! Did you know that having a Zoom call on 13-inch Macbook pro emits 4 CO2 per hour? It’s time to put down your phone or switch your laptop off for a little, disconnect yourself from the internet and pick up your favorite book instead.", challenge_category: category_electricity)
 tip_electricity_1.photo.attach(io:tip_electricity_1_photo, filename:"tipelectricity1.png", content_type:'image/png')
 
 
 # Electricity 2 - Unplug!
 tip_electricity_2_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659146180/Go%20green/unplug_dtlkiy.jpg")
-p tip_electricity_2 = Tip.create(name:"Unplug!", description: "Did you know that if your electronic devices are plugged in even when they are turned off, they are also consuming electricity? It is estimated that this standby power accounted for around 5 -10 percent of residential energy use in the US. What can you do about it? You may consider getting a power stripe with switches and turning off the switches while plugging your devices when not using . This can save up your electricity consumption!
-  ")
+p tip_electricity_2 = Tip.create(name:"Unplug!", description: "Did you know that if your electronic devices are plugged in even when they are turned off, they are still consuming electricity? It is estimated that this standby power accounted for around 5 -10 percent of residential energy use in the US. What can you do about it? Consider getting a power stripe with switches or plugging your devices out. This can reduce your electricity consumption!")
 tip_electricity_2.photo.attach(io:tip_electricity_2_photo, filename:"tipelectricity2.png", content_type:'image/png')
 
 
 # --------------Tips in Reduce/recycle/Category-----------------
 # Reduce 1 - Re-think purchase
 tip_reduce_1_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659146020/Go%20green/technology_tlb8jk.jpg")
-p tip_reduce_1 = Tip.create(name:"Re-think your purchases", description:"We all love the new Macbook Air M2. It is beautifully crafted powered by the newest Apple chip. But do you actually need a new laptop now? Is your current one still working just fine? Did you know that making laptop emit a huge amount of carbon? The carbon emission of 16-inch Macbook pro 1 TB storage is around 620 kg which is over a half of a ton! Reconsider your decision before spending that money for your new gadget or if necessary you may need to recycle your old one. ")
+p tip_reduce_1 = Tip.create(name:"Re-think your purchases", description:"We all love the new Macbook Air M2. It is beautifully crafted and powered by the newest Apple chip. But do you actually need a new laptop now? Is your current one still working just fine? Did you know that manufactoring a laptop emits a huge amount of carbon? The carbon emission of a 16-inch Macbook pro with 1 TB storage is around 620kg C02e which is over a half of a ton! Reconsider your decision before spending that money for your next purchase.")
 tip_reduce_1.photo.attach(io:tip_reduce_1_photo, filename:"tipreduce1.png", content_type:'image/png')
 
 # Reduce 2 Donate your clothes
 tip_reduce_2_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659145945/Go%20green/recylcyclothes_t116xq.jpg")
-p tip_reduce_2 = Tip.create(name:"Donate your clothes", description: "Have you ever bought clothes and never worn them? With the emerging trend of fast fashion, we just don’t want to miss out? But did you know that the clothing industry accounts for around 10% of global emissions and fast fashion has become one of the world’s  largest polluter?
-  The process of producing clothes requires a lot of resources which inevitably leaves a massive footprint. Before throwing your unwanted clothes away and letting them end up in the landfill, you may consider donating to those in need. This may help to circulate resources without depleting the new one.
-  ",challenge_category: category_reduce)
+p tip_reduce_2 = Tip.create(name:"Donate your clothes", description: "The clothing industry accounts for around 10% of global emissions and fast fashion has become one of the world’s largest polluter. The process of producing clothes requires a lot of resources which inevitably leaves a massive footprint on our environment. Before throwing your unwanted clothes away or supporting fast fashion,  remember to either donate your clothes or shop at a secondhand store.", challenge_category: category_reduce)
 tip_reduce_2.photo.attach(io:tip_reduce_2_photo, filename:"tipreduce2.png", content_type:'image/png')
 
 
@@ -131,9 +116,9 @@ p challenge_food_4 = Challenge.create(action: 'Oat milk latte', carbon_score: 26
 
 # ---------------Challenge Category: Plastic--------------------------
 
-p challenge_plastic_1 = Challenge.create(action: 'No disposable cups', carbon_score: 110, challenge_category: category_plastic)
-p challenge_plastic_2 = Challenge.create(action: 'No plastic bags', carbon_score: 10, challenge_category: category_plastic)
-p challenge_plastic_3 = Challenge.create(action: 'No plastic straws', carbon_score: 1.1, challenge_category: category_plastic)
+p challenge_plastic_1 = Challenge.create(action: 'No disposable cup', carbon_score: 110, challenge_category: category_plastic)
+p challenge_plastic_2 = Challenge.create(action: 'No plastic bag', carbon_score: 10, challenge_category: category_plastic)
+p challenge_plastic_3 = Challenge.create(action: 'No plastic straw', carbon_score: 1.1, challenge_category: category_plastic)
 p challenge_plastic_4 = Challenge.create(action: 'Carry your own water bottle', carbon_score: 200, challenge_category: category_plastic)
 
 # ---------------Challenge Category: Electricity--------------------------
@@ -142,10 +127,10 @@ p challenge_electricity_2 = Challenge.create(action: 'Less screen time one hour 
 p challenge_electricity_3 = Challenge.create(action: 'Less computer time one hour per day', carbon_score: 4, challenge_category: category_electricity)
 
 # ---------------Challenge Category: Transportation--------------------------
-p challenge_transportation_1 = Challenge.create(action: 'No Car day', carbon_score: 5420, challenge_category: category_transportation)
-p challenge_transportation_2 = Challenge.create(action: 'Cycling instead of Car', carbon_score: 3750, challenge_category: category_transportation)
-p challenge_transportation_3 = Challenge.create(action: 'Cycling instead of Bus', carbon_score: 1200, challenge_category: category_transportation)
-p challenge_transportation_4 = Challenge.create(action: 'Bus instead of Car', carbon_score: 2550, challenge_category: category_transportation)
+p challenge_transportation_1 = Challenge.create(action: 'No car day', carbon_score: 5420, challenge_category: category_transportation)
+p challenge_transportation_2 = Challenge.create(action: 'Cycling instead of car', carbon_score: 3750, challenge_category: category_transportation)
+p challenge_transportation_3 = Challenge.create(action: 'Cycling instead of bus', carbon_score: 1200, challenge_category: category_transportation)
+p challenge_transportation_4 = Challenge.create(action: 'Bus instead of car', carbon_score: 2550, challenge_category: category_transportation)
 
 # ---------------Challenge Category: Reduce--------------------------
 p challenge_reduce_1 = Challenge.create(action: 'Donates shoes', carbon_score: 1150, challenge_category: category_reduce)
