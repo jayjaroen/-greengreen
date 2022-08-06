@@ -14,12 +14,16 @@ module.exports = {
         'darkmoss': '#2D5C1D',
         'artichoke': '#C9D9B6',
         'greygreen': '#9DB595',
-        'darkgreygreen': '#909E85',
         'lightsand': '#FEFBF6',
-        'sand': '#DEE7D4',
         'bumblebee': '#F1D460',
         'rubyred': '#DD4A48',
         'blush': '#EEC6C6',
+
+        'bark': '#87805E',
+        'tan': '#C99872',
+        'muteblue': '#8FBEA7',
+        'babygreen': '#9FC088',
+        'cream': '#E4D1B9',
       },
 
     },
