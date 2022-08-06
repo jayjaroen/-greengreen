@@ -12,7 +12,7 @@
 
       <!--- Carbon emission saved-->
       <div class="flex justify-center">
-        <h1 class="text-moss text-4xl ml-4 font-oswald pt-4 tracking-wider"> <%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize %></h1>
+        <h1 class="text-moss text-4xl ml-4 font-oswald pt-4 tracking-wider"> <%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize if current_user.last_name.present? %></h1>
         <%= link_to edit_user_path(@user) do %>
         <i class="fas fa-user-edit text-moss hover:text-lightmoss text-2xl ml-4 pt-6"></i>
       </div>
