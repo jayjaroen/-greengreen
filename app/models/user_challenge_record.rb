@@ -9,7 +9,8 @@ class UserChallengeRecord < ApplicationRecord
   scope :with_user_challenges, -> { includes(:user_challenge) }
   scope :of_user, ->(user) { with_user_challenges.where(user_challenge: { user_id: user.id }) }
   scope :group_by_date, -> { group(:date) }
-  scope :with_challenge, -> { includes(:challenge) }
+  scope :of_category, ->(category) { with_challenges.where(challenges: { challenge_category: category }) }
+  scope :calc_category_score_by_date, -> (category) { of_category(category).calc_score_by_date }
 
   def calculate_category_score
     category = self.user_challenge.challenge.challenge_category

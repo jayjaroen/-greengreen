@@ -16,9 +16,11 @@ before_action :find_user, only: [:edit, :update]
     @user = current_user
     @data = CategoryScore.joins(:user).where(user: current_user).includes(:challenge_category).group('challenge_categories.name').sum(:score)
     @daily_scores = UserChallengeRecord.includes(:challenge).includes(:user_challenge).where(user_challenge: {user: current_user}).group(:date).sum('challenges.carbon_score')
-    # @user.user_challenges.challenge.sum(:carbon_score).group_by_week(:created_at)
-    # @current_user.spendings.group(:date).sum(:amount)
-    # group by challenge_cate -- for each category --
+    @daily_scores_food = @user.user_challenge_records.of_category(ChallengeCategory.second).calc_score_by_date
+    @daily_scores_elec = @user.user_challenge_records.of_category(ChallengeCategory.third).calc_score_by_date
+    @daily_scores_trans = @user.user_challenge_records.of_category(ChallengeCategory.fourth).calc_score_by_date
+    @daily_scores_plas = @user.user_challenge_records.of_category(ChallengeCategory.first).calc_score_by_date
+    @daily_scores_re = @user.user_challenge_records.of_category(ChallengeCategory.fifth).calc_score_by_date
     authorize @user
   end
 
