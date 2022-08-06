@@ -44,7 +44,7 @@
       <%# transportation category %>
     <% if @daily_scores_trans.present? %>
       <div>
-        <p class="font-barlow font-bold text-3xl my-2 text-center text-moss tracking-wider py-2"> Transporation </p>
+        <p class="font-barlow font-bold text-3xl my-2 text-center text-moss tracking-wider py-2"> Transportation </p>
         <%= line_chart  @daily_scores_trans, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
       </div>
     <% end %>
@@ -52,7 +52,7 @@
           <%# recycle category %>
     <% if @daily_scores_re.present? %>
       <div>
-        <p class="font-barlow font-bold text-3xl my-2 text-center text-moss tracking-wider py-2"> Re-duce, re-user, re-cycle </p>
+        <p class="font-barlow font-bold text-3xl my-2 text-center text-moss tracking-wider py-2"> Re-duce, Re-use, Re-cycle </p>
         <%= line_chart  @daily_scores_re, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
       </div>
     <% end %>
