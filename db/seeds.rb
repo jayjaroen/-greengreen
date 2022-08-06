@@ -152,20 +152,18 @@ p challenge_reduce_1 = Challenge.create(action: 'Donates shoes', carbon_score: 1
 p challenge_reduce_2 = Challenge.create(action: 'Donates pants', carbon_score: 8000, challenge_category: category_reduce)
 p challenge_reduce_3 = Challenge.create(action: 'Recycle plastic (1kg)', carbon_score: 1080, challenge_category: category_reduce)
 
-# category = [category_food, category_plastic, category_electricity, category_reduce, category_transportation]
-# challenge_food = [challenge_food_1, challenge_food_2, challenge_food_3, challenge_food_4]
-# challenge_plastic = [challenge_plastic_1, challenge_plastic_2]
 
 30.times do
-  p user = User.create(first_name: Faker::Name.name, email: Faker::Internet.email, password: Devise.friendly_token, country: Faker::Address.country )
+  user = User.create(first_name: Faker::Name.name, email: Faker::Internet.email, password: Devise.friendly_token, country: Faker::Address.country )
   puts "created user #{user.id}"
-  n = rand(3..15)
-  p challenges = Challenge.all.sample(n)
-  n.times do
-    p uc = UserChallenge.create(user: user, challenge: challenges.pop)
-    p uc.errors.full_messages
-    p UserChallengeRecord.create(user_challenge: uc, date: Faker::Date.between(from: 30.days.ago, to: Date.today))
-  end
+    n = rand(3..18)
+    m = rand(3..17)
+    Challenge.all.sample(n).each do |c|
+      uc = UserChallenge.create(user: user, challenge: c)
+      m.times do
+        UserChallengeRecord.create(user_challenge: uc, date: Faker::Date.between(from: 30.days.ago, to: Date.today))
+      end
+    end
 end
 
 # ########################### parsing data from json##########################
