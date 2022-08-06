@@ -3,6 +3,7 @@ require 'faker'
 require 'open-uri'
 require 'json'
 
+Reference.destroy_all
 Location.destroy_all
 CategoryScore.destroy_all
 UserChallengeRecord.destroy_all
@@ -179,3 +180,19 @@ results.each do |result|
   p location
   p location.save
 end
+
+
+############################ Adding References #################################
+p r1 = Reference.create(name: "Berners-Lee,M. (2022). The Carbon Footprint of Everything. Vancouver: Greystone Books.")
+p r2 = Reference.create(name: "Recycling is an old habit. (2021). Retrieved from https://changeit.app/blog/recycle-matters/ ")
+p r3 = Reference.create(name: "World Population Review.(2022) Carbon Footprint by Country 2022. Retrieved from https://worldpopulationreview.com/country-rankings/carbon-footprint-by-country")
+p r4 = Reference.create(name: "European Cyclists’ Federation.(2013).How much CO2 does cycling really save? Retrieved from https://ecf.com/news-and-events/news/how-much-co2-does-cycling-really-save")
+p r5 = Reference.create(name: "Minos, S. (2022). 3 Easy to reduce your standby power loads. Retrieved from https://www.energy.gov/energysaver/articles/3-easy-tips-reduce-your-standby-power-loads")
+p r6 = Reference.create(name: "Aviation.(2022).Retrieved from https://www.carbonindependent.org/22.html")
+p r7 = Reference.create(name: "Good Food Insitute.(2022).Plant-based meat for a growing world. Retrieved from https://gfi.org/resource/environmental-impact-of-meat-vs-plant-based-meat/")
+p r8 = Reference.create(name: "Tapp Water.(2019).What is the carbon footprint of bottled water?.Retrived from https://tappwater.co/us/carbon-footprint-bottled-water/")
+p r9 = Reference.create(name: "World Economic Forum. (2022).Green transport and cleaner mobility are key to meeting climate goals. Retrieved from https://www.weforum.org/agenda/2022/06/green-transport-and-cleaner-mobility-are-key-to-meeting-climate-goals/")
+p r10 = Reference.create(name: "How donating clothes helps the environment.(n.d.). Retrieved from https://collectmyclothes.co.uk/how-donating-clothes-helps-the-environment/")
+p r11 = Reference.create(name: "Ritchie, H. (2021). How much of global greenhouse gas emissions come from food? Retrieved from https://ourworldindata.org/greenhouse-gas-emissions-food")
+p r12 = Reference.create(name: "Kreier, F. (2022). Transporting food generates whopping amounts of carbon dioxide. Retrieved from https://www.nature.com/articles/d41586-022-01766-0")
+p r13 = Reference.create(name: "Gilman, S.(2015). Can we make cow burps climate-friendly?. Retrieved from https://ec.europa.eu/research-and-innovation/en/horizon-magazine/can-we-make-cow-burps-climate-friendly")
