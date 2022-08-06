@@ -4,15 +4,17 @@
     <!---Overall piechart-->
     <div class="flex flex-row justify-between">
       <div><%= link_to profile_path do %> <i class="fas fa-long-arrow-alt-left text-moss text-4xl pt-20 ml-4 "></i> <% end %></div>
-      <p class="font-oswald text-4xl pt-20 text-center text-moss tracking-wider py-2">My overall progress</p>
+      <p class="font-oswald text-4xl pt-20 text-center text-moss tracking-wider py-2 mb-4">My overall progress</p>
       <div class="bg-lighsand w-16"></div>
     </div>
+
       <div>
-        <%= pie_chart @data, donut: true, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"]%>
+        <%= pie_chart @data, donut: true, colors: ["#87805E", "#C99872", "#8FBEA7", "#9FC088", "#E4D1B9"], legend: "bottom"%>
       </div>
 
     <!---Daily progress-->
-    <p class="font-oswald text-4xl my-2 text-center text-moss tracking-wider py-2">My daily progress</p>
+    <p class="font-oswald text-4xl my-2 text-center text-moss tracking-wider py-2 mb-4">My daily progress</p>
+    <div class="px-4">
       <%= line_chart @daily_scores, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
 
     <%# Food category %>
@@ -55,5 +57,5 @@
       </div>
     <% end %>
 
-
+</div>
 </main>
