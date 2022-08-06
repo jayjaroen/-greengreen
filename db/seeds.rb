@@ -42,12 +42,17 @@ category_reduce.photo.attach(io:reduce_photo, filename: "category_reduce.png", c
 # --------------Tips in Food Category-----------------
 # Food tip 1 - buy local
 tip_food_1_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1658815101/Go%20green/local_inqwvu.png")
-p tip_food_1 = Tip.create(name: 'Buy Local', description: 'Transportation of ingredients and food products are accounted for a large part of carbon emission in the food system -nearly one of fifth of carbon emission are factored into transportation.  So you may consider to buy food that produced locally to reduce this factor.', challenge_category: category_food)
+p tip_food_1 = Tip.create(name: 'Buy Local', description: 'By supporting small-scale, locally owned businesses, you can help cut carbon emissions and air pollution. By buying locally, you are deducing your food miles, transportation pollution and plastic packaging waste. Did you know? That in 2019, it was reported that Amazon  produced over 465 million pounds of plastic packaging waste.
+  Start supporting your local markets today!
+  .', challenge_category: category_food)
 tip_food_1.photo.attach( io: tip_food_1_photo, filename: "tip_food_1_photo.png", content_type: 'image/png')
 
 # Food tip 2 - less meat
 tip_food_2_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1658815465/Go%20green/cow_ywwv9u.jpg")
-p tip_food_2 = Tip.create(name: 'Less Meat', description: 'Meat and dairy accounts for around 14.5% of global green house gas emissions. Cows are ruminant animal which have multi-chamber stomachs that rely on bacteria to digest plant-based foods. In the digestive process, a single cow can emit up to 500 litres of methane each day.',challenge_category: category_food)
+p tip_food_2 = Tip.create(name: 'Less Meat', description: 'Livestock agriculture is one of the biggest contributors to climate change. A single cow can emit up to 500 litres of methane a day. Over 70% of cows live on factory farms, where profit is prioritized over living conditions and pollution produced.
+  Factory farms contribute to climate change because of the amount of animal waste and methane gas produced which directly impacts the planet. How can we start eating less meat?
+  It is recommended to start off by introducing meatless mondays, introduce more beans to your diet as well as  meat alternatives like Beyond burgers.
+  .',challenge_category: category_food)
 tip_food_2.photo.attach(io: tip_food_2_photo, filename: "tip_food_2_photo.png", content_type:'image/png')
 
 # Food tip 3 = plant-based meat
@@ -61,7 +66,8 @@ p tip_food_4 = Tip.create(name: 'Your Choice of Coffee Matters', description: 'Y
   A cup of black coffee emit 87 g CO2
   A cup of large oat milk latte emit 288 g CO2
   A cup of large cow milk latte emit 552 g CO2
-  If you are a Latte lover, you will leave a carbon footprint more than an Espresso lover. The carbon emission that comes from milk which requires a lot of resources to produce, making a Latte less carbon efficient.',
+  Did you know? Enjoying a cup  of latte, leaves a larger carbon footprint when compared to an expresso.
+  The carbon emissions  that come from milk requires a lot of resources to produce.',
   challenge_category: category_food
   )
 tip_food_4.photo.attach(io: tip_food_4_photo, filename: "tip_food_4_photo.png", content_type: 'image/png')
@@ -74,7 +80,7 @@ tip_plastic_1.photo.attach(io: tip_plastic_1_photo, filename:"tipplastic1.png", 
 
 # Plastic tip 2 - water bottle
 tip_plastic_2_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659012366/Go%20green/waterbottle_eyyosm.jpg")
-p tip_plastic_2 = Tip.create(name: 'Carrying your own water bottle', description: 'Instead of buying a bottled water, you may consider carrying your own re-usable water bottle. Buying 1.5 bottled water can leave a 200 g CO2 footprint.If you carry your own water bottle and refill at a refill station everyday, you can save around 73 kg of CO2 emissions per year! Small actions have an accumulated effect. ', challenge_category: category_plastic )
+p tip_plastic_2 = Tip.create(name: 'Carry your own water bottle', description: 'Instead of buying a bottled water, you may consider carrying your own re-usable water bottle. Buying 1.5 bottled water can leave a 200 g CO2 footprint.If you carry your own water bottle and refill at a refill station everyday, you can save around 73 kg of CO2 emissions per year! Small actions have an accumulated effect. ', challenge_category: category_plastic )
 tip_plastic_2.photo.attach(io:tip_plastic_2_photo, filename:"tipplastic2.png", content_type:'image/png')
 
 # --------------Tips in Transportation Category-----------------
@@ -85,14 +91,14 @@ tip_transportation_1.photo.attach(io:tip_transportation_1_photo, filename:"tiptr
 
 # Transportation 2 - Your Choice of commute matters
 tip_transportation_2_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1658825916/Go%20green/transportation_admxzo.jpg")
-p tip_transportation_2 = Tip.create(name:"Your Choice of commute matters", description:"Did you know that transportation sector accounted for 20 percent of global Greenhouse gases emission and rapidly increasing? Our choice of daily commute matters to climate change more than we think.  The bottom line is all means of transport emit carbon but varying in a different degree.", challenge_category: category_transportation)
+p tip_transportation_2 = Tip.create(name:"Your choice of commute matters", description:"Did you know that transportation sector accounted for 20 percent of global Greenhouse gases emission and rapidly increasing? Our choice of daily commute matters to climate change more than we think.  The bottom line is all means of transport emit carbon but varying in a different degree.", challenge_category: category_transportation)
 tip_transportation_2.photo.attach(io:tip_transportation_2_photo, filename:"tiptransportation2.png", content_type:'image/png')
 
 
 # --------------Tips in Electricity-----------------
 # Electricity 1 - Reduce your Screen Time
 tip_electricity_1_photo = URI.open("https://res.cloudinary.com/depnzql1y/image/upload/v1659146299/Go%20green/nature_bkbzjc.jpg")
-p tip_electricity_1 = Tip.create(name:"Reduce your Screen Time", description: "In 2020, there are around 7.7 billion mobile phones in use which is estimated to emit around 580 million tons CO2e – which roughly accounted for 1 percent of global emissions! Sending texts, downloading data from your smartphone accounts for some degrees of carbon footprint. Maybe it’s time to put down your phone for a little, disconnect yourself from the internet and pick up your favorite book instead?", challenge_category: category_electricity)
+p tip_electricity_1 = Tip.create(name:"Reduce your screen time", description: "In 2020, there are around 7.7 billion mobile phones in use which is estimated to emit around 580 million tons CO2e – which roughly accounted for 1 percent of global emissions! Sending texts, downloading data from your smartphone accounts for some degrees of carbon footprint. Maybe it’s time to put down your phone for a little, disconnect yourself from the internet and pick up your favorite book instead?", challenge_category: category_electricity)
 tip_electricity_1.photo.attach(io:tip_electricity_1_photo, filename:"tipelectricity1.png", content_type:'image/png')
 
 
@@ -120,18 +126,18 @@ tip_reduce_2.photo.attach(io:tip_reduce_2_photo, filename:"tipreduce2.png", cont
 # -------------Challenges in Food Category---------------------
 p challenge_food_1 = Challenge.create(action: 'No food delivery', carbon_score: 40, challenge_category: category_food)
 p challenge_food_2 = Challenge.create(action: 'Less meat (250 g)', carbon_score: 1210, challenge_category: category_food)
-p challenge_food_3 = Challenge.create(action: 'Black coffee instead of cow milk latte', carbon_score: 465, challenge_category: category_food)
-p challenge_food_4 = Challenge.create(action: 'Oat milk latte instead of cow milk latte', carbon_score: 264, challenge_category: category_food)
+p challenge_food_3 = Challenge.create(action: 'Black coffee', carbon_score: 465, challenge_category: category_food)
+p challenge_food_4 = Challenge.create(action: 'Oat milk latte', carbon_score: 264, challenge_category: category_food)
 
 # ---------------Challenge Category: Plastic--------------------------
 
 p challenge_plastic_1 = Challenge.create(action: 'No disposable cups', carbon_score: 110, challenge_category: category_plastic)
 p challenge_plastic_2 = Challenge.create(action: 'No plastic bags', carbon_score: 10, challenge_category: category_plastic)
 p challenge_plastic_3 = Challenge.create(action: 'No plastic straws', carbon_score: 1.1, challenge_category: category_plastic)
-p challenge_plastic_4 = Challenge.create(action: 'Carrying your own water bottle', carbon_score: 200, challenge_category: category_plastic)
+p challenge_plastic_4 = Challenge.create(action: 'Carry your own water bottle', carbon_score: 200, challenge_category: category_plastic)
 
 # ---------------Challenge Category: Electricity--------------------------
-p challenge_electricity_1 = Challenge.create(action: 'No dryer', carbon_score: 22, challenge_category: category_electricity)
+p challenge_electricity_1 = Challenge.create(action: 'No hand dryer', carbon_score: 22, challenge_category: category_electricity)
 p challenge_electricity_2 = Challenge.create(action: 'Less screen time one hour per day', carbon_score: 0.7, challenge_category: category_electricity)
 p challenge_electricity_3 = Challenge.create(action: 'Less computer time one hour per day', carbon_score: 4, challenge_category: category_electricity)
 
@@ -151,7 +157,7 @@ p challenge_reduce_3 = Challenge.create(action: 'Recycle plastic (1kg)', carbon_
 # challenge_plastic = [challenge_plastic_1, challenge_plastic_2]
 
 30.times do
-  p user = User.create(first_name: Faker::Name.name, email: Faker::Internet.email, password: Devise.friendly_token, country: "Thailand")
+  p user = User.create(first_name: Faker::Name.name, email: Faker::Internet.email, password: Devise.friendly_token, country: Faker::Address.country )
   puts "created user #{user.id}"
   n = rand(3..15)
   p challenges = Challenge.all.sample(n)
