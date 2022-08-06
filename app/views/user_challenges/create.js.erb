@@ -18,6 +18,8 @@
       window.location.href = "<%= profile_path %>"
     <%# } else if (result.status == 422) {
       console.log("result denied") %>
+    } else {
+      window.location.href = "<%= challenge_category_challenges_path(@challenge.challenge_category_id) %>"
     }
   })
 <% else %>

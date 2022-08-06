@@ -18,6 +18,7 @@ class UserChallengesController < ApplicationController
       respond_to do |format|
         format.js
       end
+      # redirect_to challenge_category_challenges_path(@challenge.challenge_category_id)
     # else
     #   respond_to do |format|
     #     format.js
