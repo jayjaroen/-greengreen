@@ -1,34 +1,34 @@
 <div class="mt-20">
-  <div class="text-center font-oswald text-moss text-4xl tracking-wider"><%= @location.country.upcase %></div>
+  <!--- Country name  -->
+  <div class="text-center font-oswald text-moss text-5xl tracking-wider"><%= @location.country.upcase %></div>
     <div class="flex justify-center"><%= image_tag "melt.jpg", class:"h-40" %></div>
+      <!--- Total carbon emissions -->
       <div class="text-center font-barlow text-moss text-3xl tracking-wider">Total carbon emission(mt)</div>
-
         <div class="grid grid-cols-2 m-2 gap-2 py-2">
+
           <div class="bg-artichoke  py-6 rounded text-moss font-barlow text-xl tracking-wider text-center">
-          <div class="font-oswald text-3xl text-moss text-center" >2017</div>
-          <div class="font-oswald text-3xl text-moss mt-5 text-center"><%= @location.emission_17 %></div>
-        </div>
-
-          <div class="bg-artichoke py-6 rounded text-moss font-barlow text-xl tracking-wider">
-              <% if @location.emission_20  > @location.emission_17 %>
-                <div class="font-oswald text-3xl text-moss text-center tracking-wider" >2020<i class="fas fa-arrow-up text-rubyred ml-2"></i></div>
-                <%# #<div class="upimg bg-contain md:h-90 lg:h-80 mx-auto"></div> %>
-                <div class="font-oswald text-3xl text-moss mt-5 text-center"><%= @location.emission_20%> </div>
-              <% else %>
-                <%# <div class="downimg bg-contain md:h-90 lg:h-80 mx-auto"> %>
-                <div class="font-oswald text-3xl text-moss text-center tracking-wider" >2020</div>
-                <div class="font-oswald text-3xl text-moss mt-5 text-center"><%= @location.emission_20%><i class="fas fa-arrow-down ml-0.5 text-lightmoss"></i> </div>
-              <% end %>
-            </div>
+            <div class="font-oswald text-3xl text-moss text-center" >2017</div>
+            <div class="font-oswald text-3xl text-moss mt-5 text-center"><%= @location.emission_17 %></div>
           </div>
+
+          <% if @location.emission_20  > @location.emission_17 %>
+            <div class="bg-blush py-6 rounded text-moss font-barlow text-xl tracking-wider">
+              <div class="font-oswald text-3xl text-rubyred text-center tracking-wider" >2020<i class="fas fa-arrow-up text-rubyred ml-2"></i></div>
+              <div class="font-oswald text-3xl text-rubyred mt-5 text-center"><%= @location.emission_20%> </div>
+            </div>
+          <% else %>
+            <div class="bg-artichoke  py-6 rounded text-moss font-barlow text-xl tracking-wider text-center">
+              <div class="font-oswald text-3xl text-moss text-center tracking-wider" >2020</div>
+              <div class="font-oswald text-3xl text-moss mt-5 text-center"><%= @location.emission_20%><i class="fas fa-arrow-down ml-0.5 text-lightmoss"></i> </div>
+            </div>
+          <% end %>
+
         </div>
-
-
+      </div>
 
     <!--- This is per capita  -->
     <div class="flex justify-center"><%= image_tag "city3.jpg", class:"h-40" %></div>
       <div class="text-center font-barlow text-moss text-3xl tracking-wider mb-2">Per capita (tons)</div>
-
         <div class="grid grid-cols-2 m-2 gap-2">
 
           <div class="bg-artichoke  py-6 rounded text-moss font-barlow text-xl tracking-wider text-center">
@@ -36,18 +36,19 @@
             <div class="font-oswald text-3xl text-moss mt-5"><%= @location.per_cap_17 %></div>
           </div>
 
-          <div class="bg-artichoke py-6 rounded text-moss font-barlow text-xl tracking-wider">
-            <% if @location.per_cap_20  > @location.per_cap_17 %>
-              <div class="font-oswald text-3xl text-moss text-center tracking-wider" >2020<i class="fas fa-arrow-up text-rubyred ml-2"></i> </div>
-              <div class="font-oswald text-3xl text-moss mt-5 text-center"><%= @location.per_cap_20 %></div>
-            <% else %>
+
+          <% if @location.per_cap_20  > @location.per_cap_17 %>
+            <div class="bg-blush py-6 rounded text-moss font-barlow text-xl tracking-wider">
+              <div class="font-oswald text-3xl text-rubyred text-center tracking-wider" >2020<i class="fas fa-arrow-up text-rubyred ml-2"></i> </div>
+              <div class="font-oswald text-3xl text-rubyred mt-5 text-center"><%= @location.per_cap_20 %></div>
+            </div>
+          <% else %>
+            <div class="bg-artichoke  py-6 rounded text-moss font-barlow text-xl tracking-wider text-center">
               <div class="font-oswald text-3xl text-moss text-center tracking-wider" >2020</div>
               <div class="font-oswald text-3xl text-moss mt-5 text-center"><%= @location.per_cap_20 %><i class="fas fa-arrow-down ml-0.5 text-lightmoss"></i> </div>
-            <% end %>
-          </div>
-
-    </div>
-  </div>
+              </div>
+          <% end %>
+        </div>
 
 </div>
 
