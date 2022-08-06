@@ -11,15 +11,18 @@
   <% @challenges.each do |challenge| %>
     <%= link_to challenge_user_challenges_path(challenge), remote: true, method: :post do %>
 
-      <% if current_user.challenges.include?(challenge) %>
+        <% if current_user.challenges.include?(challenge) %>
         <div class="bg-artichoke rounded mx-4 p-4 mb-6 mt-4 shadow-lg flex justify-between">
            <div class="font-barlow text-2xl text-moss font-bold">
             <div class="ml-4 "><%= challenge.action %></div>
+
             <div class="text-barlow text-xl italic ml-4">Save <%= challenge.carbon_score > 1 ? challenge.carbon_score.to_i : challenge.carbon_score  %> g C02e </div>
+
+
            </div>
         <div><i class="fas fa-check text-moss mt-2 text-4xl mr-6"></i> </div>
 
-      <% else %>
+        <% else %>
 
         <div class="bg-artichoke rounded mx-4 p-4 mb-6 mt-4 shadow-lg flex justify-between">
           <div class="font-barlow text-2xl text-moss font-bold">
@@ -27,13 +30,11 @@
             <div class="text-xl italic ml-4">Save <%= challenge.carbon_score > 1 ? challenge.carbon_score.to_i : challenge.carbon_score  %> g C02e </div>
           </div>
           <div><i class="fas fa-plus text-moss mt-2 text-4xl mr-6"></i> </div>
-      <% end %>
+        <% end %>
         </div>
 
     <% end %>
   <% end %>
-
-
 
 
 <!-----Original------>
