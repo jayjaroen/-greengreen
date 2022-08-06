@@ -151,7 +151,7 @@ p challenge_reduce_3 = Challenge.create(action: 'Recycle plastic (1kg)', carbon_
 # challenge_plastic = [challenge_plastic_1, challenge_plastic_2]
 
 30.times do
-  p user = User.create(first_name: Faker::Name.name, email: Faker::Internet.email, password: Devise.friendly_token)
+  p user = User.create(first_name: Faker::Name.name, email: Faker::Internet.email, password: Devise.friendly_token, country: "Thailand")
   puts "created user #{user.id}"
   n = rand(3..15)
   p challenges = Challenge.all.sample(n)
@@ -162,7 +162,7 @@ p challenge_reduce_3 = Challenge.create(action: 'Recycle plastic (1kg)', carbon_
   end
 end
 
-########################### parsing data from json##########################
+# ########################### parsing data from json##########################
 filepath = "data/emission_data.json"
 
 serialized_results = File.read(filepath)

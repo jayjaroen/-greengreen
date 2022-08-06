@@ -5,6 +5,9 @@ class ChallengesController < ApplicationController
   def index
     @challenge_category = ChallengeCategory.find(params[:challenge_category_id])
     @challenges = @challenge_category.challenges
+    @user = current_user
+
+
     @challenge = policy_scope(Challenge).order(created_at: :desc)
   end
 
