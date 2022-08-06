@@ -23,7 +23,7 @@
 
           <div class="field">
             <%= f.label :country, class:"text-darkmoss text-xl tracking-wide mb-2 font-barlow" %><br />
-            <%= f.select :country, options_for_select(Location.order(:country).pluck(:country)), autofocus: true, autocomplete: "email", class:"w-full p-2 bg-gray-50 text-gray-500 pl-2  mt-2 outline-none mb-4 rounded" %>
+            <%= f.select :country, options_for_select(Location.order(:country).pluck(:country)), { prompt: "Select your country"} , {class:"w-full p-2 bg-gray-50 text-gray-500 pl-2  mt-2 outline-none mb-4 rounded", data: { behavior: "tom-select" }, id: "tom-select"} %>
           </div>
 
           <div class="field">
