@@ -16,6 +16,7 @@ module.exports = {
         'greygreen': '#9DB595',
         'lightsand': '#FEFBF6',
         'bumblebee': '#F1D460',
+        'rubyred': '#DD4A48',
       },
 
     },
