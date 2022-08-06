@@ -20,10 +20,12 @@ import "stylesheets/application"
 // ActiveStorage.start()
 import { toggleNavbar } from '../scripts/toggle-navbar'
 import { setHeight } from '../scripts/set-home-screen-height'
+import { initTomSelect } from '../scripts/init-tom-select'
 
 document.addEventListener("turbolinks:load", () =>{
   toggleNavbar()
   setHeight()
+  initTomSelect()
 })
 
 // // sweet alert

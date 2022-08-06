@@ -5,7 +5,7 @@
       <div class="flex justify-center pt-20">
         <% if @user.photo.attached? %>
           <%#= cl_image_tag @user.photo.key, :width=>200, :height=>200, gravity: :face, :gravity=>"face", class: "profile-img p-0 rounded-full" %>
-          <%= cl_image_tag @user.photo.key, gravity: :face, :gravity=>"face", class: "profile-img p-0 rounded-full", style: "width: 200px; height: 200px;" %>
+          <%= cl_image_tag @user.photo.key, gravity: :face, :gravity=>"face", class: "profile-img p-0 rounded-full object-cover", style: "width: 200px; height: 200px;" %>
         <% else %>
           <%#= image_tag "noprofile.jpg", width: 200, height: 200, class:"rounded-full p-o" %>
           <%= image_tag "noprofile.jpg", class:"rounded-full object-cover", style: "width: 200px; height: 200px;" %>
