@@ -111,8 +111,8 @@ tip_reduce_2.photo.attach(io:tip_reduce_2_photo, filename:"tipreduce2.png", cont
 # -------------Challenges in Food Category---------------------
 p challenge_food_1 = Challenge.create(action: 'No food delivery', carbon_score: 40, challenge_category: category_food)
 p challenge_food_2 = Challenge.create(action: 'Less meat (250 g)', carbon_score: 1210, challenge_category: category_food)
-p challenge_food_3 = Challenge.create(action: 'Black coffee', carbon_score: 465, challenge_category: category_food)
-p challenge_food_4 = Challenge.create(action: 'Oat milk latte', carbon_score: 264, challenge_category: category_food)
+p challenge_food_3 = Challenge.create(action: 'Black coffee instead of cow milk latte', carbon_score: 465, challenge_category: category_food)
+p challenge_food_4 = Challenge.create(action: 'Oat milk latte instead of cow milk latte', carbon_score: 264, challenge_category: category_food)
 
 # ---------------Challenge Category: Plastic--------------------------
 
