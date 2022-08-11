@@ -1,6 +1,7 @@
 <%# this section is hidden under the navbar %>
 <main>
     <%#= Progress over the pass week (total_score), should ti be additional line  %>
+
     <!---Overall piechart-->
     <div class="flex flex-row justify-between">
       <div><%= link_to profile_path do %> <i class="fas fa-long-arrow-alt-left text-moss text-4xl pt-20 ml-4 "></i> <% end %></div>
@@ -14,48 +15,51 @@
 
     <!---Daily progress-->
     <p class="font-oswald text-4xl my-2 text-center text-moss tracking-wider py-2 mb-4">My daily progress</p>
-    <div class="px-4">
-      <%= line_chart @daily_scores, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
+      <div class="mx-2">
+        <%= line_chart @daily_scores, colors: ["#5A8F48"], width: "350px", height: "350px" %>
+      </div>
 
     <%# Food category %>
     <% if @daily_scores_food.present? %>
-      <div>
         <p class="font-barlow font-bold text-3xl my-2 text-center text-moss tracking-wider py-2"> Food </p>
-        <%= line_chart  @daily_scores_food, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
+      <div class="mx-2">
+        <%#= line_chart  @daily_scores_food, colors: ["#C99872"], width: "350px", height: "350px" %>
+         <%= line_chart  @daily_scores_food, colors: ["#5A8F48"], width: "350px", height: "350px" %>
       </div>
     <% end %>
 
      <%# Plastics category %>
     <% if @daily_scores_plas.present? %>
-      <div>
         <p class="font-barlow font-bold text-3xl my-2 text-center text-moss tracking-wider py-2"> Plastics </p>
-        <%= line_chart  @daily_scores_plas, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
+      <div class="mx-2">
+        <%= line_chart  @daily_scores_plas, colors: ["#5A8F48"], width: "350px", height: "350px" %>
       </div>
     <% end %>
 
      <%# electricity category %>
     <% if @daily_scores_elec.present? %>
-      <div>
         <p class="font-barlow font-bold text-3xl my-2 text-center text-moss tracking-wider py-2"> Electricity </p>
-        <%= line_chart  @daily_scores_elec, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
+      <div class="mx-2">
+        <%= line_chart  @daily_scores_elec, colors: ["#5A8F48"], width: "350px", height: "350px" %>
       </div>
     <% end %>
 
       <%# transportation category %>
     <% if @daily_scores_trans.present? %>
-      <div>
         <p class="font-barlow font-bold text-3xl my-2 text-center text-moss tracking-wider py-2"> Transportation </p>
-        <%= line_chart  @daily_scores_trans, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
+      <div class="mx-2">
+        <%= line_chart  @daily_scores_trans, colors: ["#5A8F48"], width: "350px", height: "350px" %>
       </div>
     <% end %>
 
           <%# recycle category %>
     <% if @daily_scores_re.present? %>
-      <div>
         <p class="font-barlow font-bold text-3xl my-2 text-center text-moss tracking-wider py-2"> Re-duce, Re-use, Re-cycle </p>
-        <%= line_chart  @daily_scores_re, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
+      <div class="mx-2">
+        <%# <%= line_chart  @daily_scores_re, colors: ["#5A8F48", "#80B26F", "#2D5C1D", "#C9D9B6", "#9DB595"] %>
+         <%= line_chart  @daily_scores_re, colors: ["#5A8F48"], width: "350px", height: "350px" %>
       </div>
     <% end %>
 
-</div>
+ <div class="bg-lightsand" style="height: 20px"></div>
 </main>
