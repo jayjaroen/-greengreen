@@ -1,5 +1,6 @@
 {
  "name": "Green is now",
+ "display": "fullscreen",
  "icons": [
   <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
   <% files.each_with_index do |file, index| %>
