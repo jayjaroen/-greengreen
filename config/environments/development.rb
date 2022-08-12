@@ -76,5 +76,5 @@ Rails.application.configure do
 
   #ngrok
   config.hosts << /[a-z0-9\-]+\.ngrok\.io/
-  config.hosts << "8cec-222-70-16-233.jp.ngrok.io"
+  config.hosts << "0292-222-70-16-233.ap.ngrok.io"
 end
