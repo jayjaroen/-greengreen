@@ -27,9 +27,21 @@
           <!--- User name carbon emmissions -->
 
             <div class="flex flex-col">
+<<<<<<< HEAD
               <div class="flex align-center">
                 <div class="font-oswald text-4xl font-bold text-moss tracking-wide"><%= x.score %></div>
               </div>
+=======
+            <div class="flex align-center">
+              <div class="font-oswald text-4xl font-bold text-moss tracking-wide">
+                <% if x.score > 100000 %>
+                  <%= number_with_precision(x.score.fdiv(1000), precision: 2) %> kg
+                <% else %>
+                  <%= x.score %> g
+                <% end %>
+              </div>
+            </div>
+>>>>>>> 428fd4c2b1a8467d544fa5b7b220b03616e349e2
               <div class="font-barlow text-2xl text-moss text-left"><%= x.user.first_name%></div>
             </div>
 

@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_one_attached :photo
   validates :country, presence: true
 
+
   def total_carbon_score
     total = Challenge.all.map do |challenge|
       # no dryer
