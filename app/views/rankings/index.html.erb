@@ -1,28 +1,37 @@
 <main class="bg-lightsand h-screen">
- <h1 class="font-oswald text-moss text-5xl text-center pt-20">Ranking <i class="fas fa-award text-moss"></i></h1>
+ <h1 class="font-oswald text-moss text-5xl text-center pt-20 md:pt-24">Ranking <i class="fas fa-award text-moss"></i></h1>
   <div class="font-barlow text-moss text-xl text-center mx-2 my-2">The top #3 overall users</div>
-  <div class="md:grid md:grid-cols-3">
 
-  <!--- Ranking for different categories -->
+
+  <%# <div class="md:grid md:grid-cols-5 md:grid-rows-4"> %>
+  <div>
+    <!--- Ranking for different categories -->
     <% ChallengeCategory.all.each do |category| %>
       <div class="font-barlow text-moss py-2 text-3xl text-center font-bold flex justify-center tracking-wider mx-2" ><%= category.name %> </div>
       <!--- Card --------->
       <% CategoryScore.where(challenge_category: category).order(score: :desc).limit(3).each do |x|%>
-      <div class="bg-artichoke rounded p-4 mx-4 text-center mb-2">
+       <div class="bg-artichoke rounded p-4 mx-4 text-center mb-2 md:mx-80">
       <!--- min-height for cards --------->
       <!--- Profile pic -->
-        <div class="flex flex-start">
+        <div class="flex md:ml-32">
 
-              <% if x.user.photo.attached? %>
-                <%# <%= cl_image_tag x.user.photo.key, :width=>75, :height=>75, gravity: :face, :gravity=>"face", class: "rounded-full mr-4" %>
-               <%= cl_image_tag x.user.photo.key, gravity: :face, :gravity=>"face", class: "profile-img p-0 rounded-full object-cover mr-4", style: "width: 75px; height: 75px;" %>
+          <% if x.user.photo.attached? %>
+            <%# <%= cl_image_tag x.user.photo.key, :width=>75, :height=>75, gravity: :face, :gravity=>"face", class: "rounded-full mr-4" %>
+            <%= cl_image_tag x.user.photo.key, gravity: :face, :gravity=>"face", class: "profile-img p-0 rounded-full object-cover mr-4", style: "width: 75px; height: 75px;" %>
 
-              <% else %>
-                <%# <%= image_tag "noprofile.jpg", width: 75, height: 75, class:"rounded-full mr-4" %>
-                 <%= image_tag "noprofile.jpg", class:"rounded-full object-cover mr-4", style: "width: 75px; height: 75px;" %>
-              <% end %>
-        <!--- User name carbon emmissions -->
+          <% else %>
+            <%# <%= image_tag "noprofile.jpg", width: 75, height: 75, class:"rounded-full mr-4" %>
+            <%= image_tag "noprofile.jpg", class:"rounded-full object-cover mr-4", style: "width: 75px; height: 75px;" %>
+          <% end %>
+
+          <!--- User name carbon emmissions -->
+
             <div class="flex flex-col">
+<<<<<<< HEAD
+              <div class="flex align-center">
+                <div class="font-oswald text-4xl font-bold text-moss tracking-wide"><%= x.score %></div>
+              </div>
+=======
             <div class="flex align-center">
               <div class="font-oswald text-4xl font-bold text-moss tracking-wide">
                 <% if x.score > 100000 %>
@@ -32,13 +41,15 @@
                 <% end %>
               </div>
             </div>
+>>>>>>> 428fd4c2b1a8467d544fa5b7b220b03616e349e2
               <div class="font-barlow text-2xl text-moss text-left"><%= x.user.first_name%></div>
             </div>
-        </div>
 
         </div>
+      </div>
       <% end %>
     <% end %>
    </div>
+
   <div class="bg-lightsand" style="height: 50px"></div>
 </main>
